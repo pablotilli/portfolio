@@ -1,0 +1,112 @@
+{
+  "CV": "CV",
+  "contact": "Contact",
+  "about_this_proyect": "About This Project",
+  "documents": "Documents",
+  "images": "Images",
+  "preferences": "Preferences",
+  "wallpaper": "Wallpaper",
+  "appearence": "Appearance",
+  "language": "Language",
+  "widgets": "Widgets",
+  "en_language": "English",
+  "es_language": "Spanish",
+  "it_language": "Italian",
+  "weather": "Weather",
+
+  "cv_content": {
+    "sections": {
+      "presentation": {
+        "title": "PRESENTATION",
+        "paragraphs": {
+          "1": "My name is Pablo Tilli. I am a Senior Fullstack Developer with over 20 years of experience in developing comprehensive solutions for web, desktop, and mobile applications.",
+          "2": "Expert in technologies such as HTML, CSS, JavaScript, React, and Node.js, as well as other key tools, with a strong focus on performance optimization and improving user experience."
+        }
+      },
+      "work_experience": {
+        "title": "WORK EXPERIENCE",
+        "subtitle": "Some of my recent notable projects",
+        "jobs": {
+          "1": {
+            "company": "Mercado Agroganadero de la República Argentina",
+            "date": "(March 2020 - Present)",
+            "role": "Software Analyst and Developer",
+            "description": "The Mercado Agroganadero de la República Argentina handles the weekly transit of over 10,000 heads of cattle, being a fundamental pillar in the agricultural supply chain. It facilitates multi-million dollar transactions that directly impact the national economy. Additionally, it covers a vast logistics network that ensures the dispatch of cattle to different provinces across the country.",
+            "responsibilities_title": "Responsibilities",
+            "responsibilities": {
+              "1": "I provide analysis and development services for robust and scalable solutions to modernize and create new projects that optimize the Market's management."
+            },
+            "technologies_title": "Technologies",
+            "technologies": {
+              "1": "Frontend: React, TypeScript, Styled Components, Chakra UI, Astro, Tailwind CSS, Next.js",
+              "2": "Backend: Node.js, TypeScript, Express, TypeORM",
+              "3": "Databases: MySQL, SQL Server, and MongoDB"
+            },
+            "achievements_title": "Impact and Key Achievements",
+            "achievements": {
+              "1": "I implemented a module for the registration, tracking, and generation of accident statistics, as well as for controlling video requests from security cameras. These modules have improved incident response capabilities, facilitating more efficient and transparent management of security and medical leave administration due to accidents.",
+              "2": "I created a platform to display relevant information about indexes and sector data in real-time on various screens distributed throughout the Market's premises. This has significantly improved communication with visitors, allowing them to access updated data immediately, which enhances transparency and informed decision-making by participants.",
+              "3": "I developed a dashboard that synthesizes a large amount of key variables for management, optimizing the decision-making process. This has considerably reduced response times and facilitated the Market's strategic direction, improving operational efficiency and adaptability to sector changes.",
+              "4": "I implemented a real-time alert system that monitors key statistics on corral management, as well as visualizes statistics on cattle intake, transfer, and dispatch to different provinces. As a result, greater accuracy and control in logistics operations have been achieved, reducing errors and improving cattle management efficiency.",
+              "5": "I developed a registration system for all employees and associates of the Market, generating a personalized dashboard according to permission levels (Administration, Management, Accounting, Systems, Maintenance, etc.). This system has improved information security and allowed each area to efficiently access relevant data for their management, optimizing workflows and internal collaboration."
+            }
+          },
+          "2": {
+            "company": "Membranding",
+            "date": "January 2022 – March 2023",
+            "role": "Analysis, Development, and Implementation of the Company’s Budgeting System",
+            "description": "Membranding is a branding agency with a presence in Buenos Aires, New York, and Madrid, with extensive experience that has consolidated it as a benchmark in the sector, helping companies stand out in their respective markets.",
+            "technologies_title": "Technologies",
+            "technologies": {
+              "1": "Frontend: Next.js, React, TypeScript, Tailwind.css",
+              "2": "Backend: Node.js, TypeScript, Express",
+              "3": "Databases: MySQL"
+            },
+            "responsibilities_title": "Responsibilities",
+            "responsibilities": {
+              "1": "I designed, developed, and implemented a comprehensive budgeting system, optimizing the quoting and budget management processes, achieving greater efficiency in project management, and complete visibility of each budget’s lifecycle."
+            },
+            "achievements_title": "Impact and Key Achievements",
+            "achievements": {
+              "1": "This solution led to a reduction in response time to clients and an improvement in the accuracy of quotes.",
+              "2": "Greatly facilitated strategic decision-making based on historical data."
+            }
+          },
+          "3": {
+            "company": "Referencia Gastronómica S.A.",
+            "date": "(April 2023 – June 2024)",
+            "role": "Development and Deployment of a Web Platform and Mobile App",
+            "description": "Referencia Gastronómica is a platform specifically designed for the gastronomic sector, considering the main needs of business owners and job seekers in this industry.",
+            "technologies_title": "Technologies",
+            "technologies": {
+              "1": "Frontend: Next.js, React, React Native, Expo"
+            },
+            "responsibilities_title": "Responsibilities",
+            "responsibilities": {
+              "1": "Development of the web platform's frontend and the mobile application (Android).",
+              "2": "I worked closely with a UX/UI, backend, and UX writing team to bring the project to the desired point for the client on time.",
+              "3": "The website is divided into an institutional part and a management system for business owners in the gastronomic sector, allowing registered users to post job ads, track candidates, search for product and service suppliers, and rate them. Additionally, registered business owners can request references about potential candidates from other registered businesses. There is also an area where they can post news and products for sale, visible to other business owners on the site.",
+              "4": "The mobile app is designed for job seekers in the sector. After registration, they can start following offers related to their interests, upload their CV to be contacted, and view statistics on the visibility of their profiles."
+            },
+            "achievements_title": "Impact and Key Achievements",
+            "achievements": {
+              "1": "The project required very tight development times, and I managed to implement it in even less time than expected.",
+              "2": "Given the client's satisfaction with the web platform, I was also in charge of developing the mobile application for job seekers. Initially, the application was developed for Android, considering the target audience, but thanks to using React Native, it is open to the possibility of being easily ported to iOS."
+            }
+          },
+          "4": {
+            "company": "Course Teaching",
+            "date": "(March 2018 – January 2020)",
+            "description": "Sponsored by Telecom, Google, and JP Morgan through the Comunidad IT foundation, which has a presence in Argentina, Chile, and Canada, I trained hundreds of students in technologies such as React, Java, Node.js, and PHP.",
+            "responsibilities_title": "Responsibilities",
+            "achievements_title": "Impact and Key Achievements",
+            "achievements": {
+              "1": "My pedagogical approach, focused on practice and real project development, has enabled more than 50% of course participants to obtain employment in the IT sector, demonstrating the effectiveness of the training provided.",
+              "2": "I managed to motivate high-potential students to overcome initial programming challenges, helping them develop the perseverance and confidence needed to complete the courses, and today they are integrated into the IT job market."
+            }
+          }
+        }
+      }
+    }
+  }
+}

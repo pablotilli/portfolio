@@ -1,0 +1,135 @@
+/* :root {
+  --body-background-color: rgb(0, 0, 0);
+}
+ */
+body {
+  background-color: var(--body-background-color);
+  height: 100svh;
+  width: 100svw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/* #root {
+  background: black;
+} */
+
+.mobile-dock-container {
+  height: 11svh;
+  position: absolute;
+  /* margin-bottom: 15px; */
+  bottom: calc(100svh - (100svh - 6svh));
+  width: 100%;
+}
+
+.mobile-dock {
+  position: absolute;
+  /*   background-color: blue; */
+  width: 90%;
+  height: 90%;
+  left: calc(10% / 2);
+  border-radius: 30px;
+  background-color: rgba(128, 128, 128, 0.267);
+  display: flex; /*  grid; */
+
+  /* grid-template-columns: repeat(4, 1fr); */
+  gap: 5px;
+
+  padding: 7px;
+}
+
+.mobile-dock-icon {
+  width: 100%;
+  /*   background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-dock-icon img {
+  height: 100%;
+}
+
+.mobile-status-bar {
+  /*   background-color: red; */
+  display: flex;
+  padding: 10px 0;
+
+  height: 5svh;
+}
+
+.mobile-status-bar > div {
+  flex: 1;
+}
+
+.left-status-bar {
+  padding-left: 18px;
+}
+
+.mobile-content {
+  /* background-color: black; */
+  /*  height: calc(100% - 32px); */
+  /*   border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px; */
+  height: 100%;
+}
+
+.right-status-bar {
+  padding-right: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+
+  img {
+    height: 10px;
+  }
+}
+
+.notch {
+  background-color: #060606;
+  border-radius: 25px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px;
+  align-items: center;
+}
+
+.with-border-radius {
+  border-radius: 24px;
+}
+
+.glass {
+  height: 100%;
+  width: 100%;
+
+  border: 2px solid gray;
+  border-radius: 26px;
+
+  position: absolute;
+
+  opacity: 0.3;
+  filter: blur(15px);
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+.display-content {
+  height: 100%;
+  width: 100%;
+
+  background-repeat: none;
+  border: 2px solid gray;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}

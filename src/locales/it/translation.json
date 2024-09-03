@@ -1,0 +1,110 @@
+{
+  "CV": "CV",
+  "contact": "Contatto",
+  "about_this_proyect": "Informazioni su questo progetto",
+  "documents": "Documenti",
+  "images": "Immagini",
+  "preferences": "Preferenze",
+  "wallpaper": "Sfondo",
+  "appearence": "Aspetto",
+  "language": "Lingua",
+  "widgets": "Widget",
+  "en_language": "Inglese",
+  "es_language": "Spagnolo",
+  "it_language": "Italiano",
+  "weather": "Meteo",
+
+  "cv_content": {
+    "sections": {
+      "presentation": {
+        "title": "PRESENTAZIONE",
+        "paragraphs": {
+          "1": "Mi chiamo Pablo Tilli. Sono uno Sviluppatore Fullstack Senior con oltre 20 anni di esperienza nello sviluppo di soluzioni integrate per applicazioni web, desktop e mobile.",
+          "2": "Esperto in tecnologie come HTML, CSS, JavaScript, React e Node.js, oltre ad altri strumenti chiave, con un forte focus sull'ottimizzazione delle prestazioni e sul miglioramento dell'esperienza utente."
+        }
+      },
+      "work_experience": {
+        "title": "ESPERIENZA LAVORATIVA",
+        "subtitle": "Alcuni dei miei ultimi lavori di rilievo",
+        "jobs": {
+          "1": {
+            "company": "Mercado Agroganadero della Repubblica Argentina",
+            "date": "(marzo 2020 - Attuale)",
+            "role": "Analista e Sviluppatore Software",
+            "description": "Il Mercado Agroganadero della Repubblica Argentina gestisce settimanalmente il transito di oltre 10.000 capi di bestiame, essendo un pilastro fondamentale nella catena di approvvigionamento agroalimentare. Facilita transazioni multimilionarie che impattano direttamente sull'economia nazionale. Inoltre, copre una vasta rete logistica che assicura la spedizione di bestiame verso le diverse province del paese.",
+            "responsibilities_title": "Responsabilità",
+            "responsibilities": {
+              "1": "Offro servizi di analisi e sviluppo di soluzioni robuste e scalabili per la modernizzazione e la creazione di nuovi progetti che ottimizzano la gestione del Mercato."
+            },
+            "technologies_title": "Tecnologie",
+            "technologies": {
+              "1": "Frontend: React, TypeScript, Styled Components, Chakra UI, Astro, Tailwind CSS, Next.js",
+              "2": "Backend: Node.js, TypeScript, Express, TypeORM",
+              "3": "Database: MySQL, SQL Server e MongoDB"
+            },
+            "achievements_title": "Impatto e Risultati Chiave",
+            "achievements": {
+              "1": "Ho implementato un modulo per la registrazione, il monitoraggio e la generazione di statistiche sugli incidenti, oltre che per il controllo delle richieste di video delle telecamere di sicurezza. Questi moduli hanno migliorato la capacità di risposta agli incidenti, facilitando una gestione più efficiente e trasparente della sicurezza e dell'amministrazione delle licenze mediche per infortuni.",
+              "2": "Ho creato una piattaforma per mostrare informazioni rilevanti su indici e dati del settore in tempo reale su vari schermi distribuiti nel mercato. Ciò ha notevolmente migliorato la comunicazione con i visitatori, consentendo loro di accedere immediatamente a dati aggiornati, potenziando la trasparenza e il processo decisionale informato da parte dei partecipanti.",
+              "3": "Ho sviluppato una dashboard che sintetizza una grande quantità di variabili chiave per la gestione, ottimizzando il processo decisionale. Questo ha permesso di ridurre considerevolmente i tempi di risposta e ha facilitato la direzione strategica del Mercato, migliorando l'efficienza operativa e la capacità di adattamento ai cambiamenti nel settore.",
+              "4": "Ho implementato un sistema di allerta in tempo reale che permette di monitorare statistiche chiave sulla gestione dei recinti, oltre alla visualizzazione delle statistiche sull'ingresso del bestiame, il suo trasferimento e la spedizione verso le diverse province. Come risultato, si è ottenuta una maggiore precisione e controllo nelle operazioni logistiche, riducendo gli errori e migliorando l'efficienza della gestione del bestiame.",
+              "5": "Ho sviluppato un sistema di registrazione per tutti i dipendenti e le persone legate al Mercato, che genera una dashboard personalizzata in base al livello di permessi (Amministrazione, Direzione, Contabilità, Sistemi, Manutenzione, ecc.). Questo sistema ha migliorato la sicurezza delle informazioni e ha permesso a ciascuna area di accedere in modo efficiente ai dati rilevanti per la propria gestione, ottimizzando i flussi di lavoro e la collaborazione interna."
+            }
+          },
+          "2": {
+            "company": "Membranding",
+            "date": "gennaio 2022 – marzo 2023",
+            "role": "Analisi, sviluppo e implementazione del sistema di preventivi della compagnia",
+            "description": "Membranding è un'agenzia di branding con sede a Buenos Aires, New York e Madrid, con una lunga esperienza che l'ha consolidata come punto di riferimento nel settore, aiutando le aziende a distinguersi nei rispettivi mercati.",
+            "technologies_title": "Tecnologie",
+            "technologies": {
+              "1": "Frontend: Next.js, React, TypeScript, Tailwind.css",
+              "2": "Backend: Node.js, TypeScript, Express",
+              "3": "Database: MySQL"
+            },
+            "responsibilities_title": "Responsabilità",
+            "responsibilities": {
+              "1": "Ho progettato, sviluppato e implementato un sistema di preventivi integrato, ottimizzando i processi di quotazione e gestione dei preventivi, ottenendo una maggiore efficienza nella gestione dei progetti e una visibilità completa del ciclo di vita di ogni preventivo."
+            },
+            "achievements_title": "Impatto e Risultati Chiave",
+            "achievements": {
+              "1": "Questa soluzione ha permesso una riduzione nei tempi di risposta ai clienti e un miglioramento nella precisione delle quotazioni.",
+              "2": "Ha notevolmente facilitato il processo decisionale strategico basato su dati storici."
+            }
+          },
+          "3": {
+            "company": "Referencia Gastronómica S.A.",
+            "date": "(aprile 2023 – giugno 2024)",
+            "role": "Sviluppo e distribuzione di una piattaforma web e di un'app mobile",
+            "description": "Referencia Gastronómica è una piattaforma pensata specificamente per il settore gastronomico che tiene conto delle principali necessità degli imprenditori e di coloro che cercano lavoro in questo settore.",
+            "technologies_title": "Tecnologie",
+            "technologies": {
+              "1": "Frontend: Next.js, React, React Native, Expo"
+            },
+            "responsibilities_title": "Responsabilità",
+            "responsibilities": {
+              "1": "Sviluppo del frontend della piattaforma web e dell'applicazione mobile (Android).",
+              "2": "Nel progetto ho lavorato con un team di UX/UI, backend e UX writing per portare il lavoro al livello richiesto dal cliente nei tempi e nelle modalità previste.",
+              "3": "Il sito web è diviso in una parte istituzionale e in un sistema di gestione per imprenditori del settore gastronomico, che consente di pubblicare annunci di lavoro, monitorare i candidati, cercare fornitori di prodotti e servizi, oltre che valutare gli stessi; tra gli imprenditori registrati è possibile richiedere referenze sui potenziali candidati. C'è anche un'area in cui è possibile pubblicare novità e prodotti in vendita, visibili agli altri imprenditori del sito.",
+              "4": "Per quanto riguarda l'app mobile, è pensata per i candidati in cerca di lavoro nel settore. Dopo la registrazione, possono seguire le offerte legate ai loro interessi, caricare il proprio CV per essere contattati e vedere statistiche sulla visualizzazione dei loro profili."
+            },
+            "achievements_title": "Impatto e Risultati Chiave",
+            "achievements": {
+              "1": "Il progetto richiedeva tempi piuttosto ristretti per lo sviluppo e sono riuscito a implementarlo in ancora meno tempo del previsto.",
+              "2": "Dato il livello di soddisfazione del cliente con la piattaforma web, sono stato incaricato anche dello sviluppo dell'applicazione mobile per i candidati. Inizialmente l'applicazione è stata realizzata per Android tenendo conto del pubblico target, ma grazie all'utilizzo di React Native è aperta la possibilità di portarla su iOS in modo agile."
+            }
+          },
+          "4": {
+            "company": "Insegnamento di corsi",
+            "date": "(marzo 2018 – gennaio 2020)",
+            "description": "Sponsorizzato da Telecom, Google e JP Morgan attraverso la fondazione Comunidad IT, che ha sede in Argentina, Cile e Canada, ho formato centinaia di studenti su tecnologie come React, Java, Node.js e PHP.",
+            "achievements_title": "Impatto e Risultati Chiave",
+            "achievements": {
+              "1": "Questi corsi miravano a migliorare l'integrazione dei giovani nel mercato del lavoro, con un focus particolare su quelli in situazione di vulnerabilità. Come risultato, oltre il 70% degli studenti che hanno completato i corsi sono stati assunti da aziende tecnologiche, ottenendo posizioni nel settore. Ciò non solo ha permesso loro di acquisire competenze richieste, ma ha anche contribuito a migliorare la loro qualità di vita e a promuovere l'inclusione sociale attraverso l'accesso a lavori qualificati."
+            }
+          }
+        }
+      }
+    }
+  }
+}

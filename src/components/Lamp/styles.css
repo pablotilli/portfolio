@@ -1,0 +1,34 @@
+.lamp-container {
+  flex-basis: 200px;
+  position: relative;
+  display: flex;
+  align-items: end;
+}
+
+.ligth-container {
+  height: 100%;
+  max-height: 50vh;
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  width: 100%;
+}
+.ligth-container {
+  img {
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+}
+
+.lamp-blink {
+  animation: lamp-blink-animation infinite alternate 1s;
+}
+
+@keyframes lamp-blink-animation {
+  0% {
+    filter: drop-shadow(none);
+  }
+  100% {
+    filter: drop-shadow(0 0 20px #6b6b6bc2);
+  }
+}

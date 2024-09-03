@@ -1,0 +1,8 @@
+.mobile-icons-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  padding-left: 15px;
+  padding-top: 15px;
+}
