@@ -22,7 +22,6 @@ const colorSides = [
 ];
 
 function Cube() {
-  // Definición de la interfaz para los elementos en movesRef
   interface Move {
     axis: 'x' | 'y' | 'z';
     limit: number;
@@ -39,12 +38,6 @@ function Cube() {
 
   useFrame(() => {
     TWEEN.update();
-
-    if (cubeGroupRef.current) {
-      /*    const scale = Math.min(size.width / 800, size.height / 800); // Ajusta el factor de escala según sea necesario
-        cubeGroupRef.current.scale.set(1, 1, 1); */
-      //cubeGroupRef.current.updateMatrix();
-    }
   });
 
   const timeoutIdsRef = useRef<NodeJS.Timeout[]>([]);
@@ -353,12 +346,12 @@ function rotate(
 
 export function CameraAnimation() {
   const targetPositions = [
-    { position: [6, 0, 0], lookAt: [0, 1, 0] }, // Blanco
-    { position: [0, 6, 0], lookAt: [0, 0, 1] }, // Verde
-    { position: [0, 0, 6], lookAt: [1, 0, 0] }, // Naranja
+    { position: [6, 0, 0], lookAt: [0, 1, 0] }, // White
+    { position: [0, 6, 0], lookAt: [0, 0, 1] }, // Green
+    { position: [0, 0, 6], lookAt: [1, 0, 0] }, // Orange
   ];
   const targetIndex = useRef(0);
-  const changeTime = 5000; // Cambia cada 5 segundos
+  const changeTime = 5000;
   const startTime = useRef(Date.now());
 
   useFrame((state) => {
@@ -386,8 +379,6 @@ export function CameraAnimation() {
         t
       )
     );
-
-    //state.camera.updateProjectionMatrix();
   });
 
   return null;

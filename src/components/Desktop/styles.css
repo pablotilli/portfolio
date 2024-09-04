@@ -12,15 +12,12 @@ html * {
   border: 20px solid black;
   height: calc(100vh - 40px);
   margin: 0;
-  /* height: 100vh; */
   padding: 0 0 80px 0;
   border-radius: 18px;
-  /*flex: 1;*/
   position: relative;
 }
 
 body {
-  /*background-color: rgb(255, 255, 255);*/
   overflow: hidden;
 }
 
@@ -100,7 +97,6 @@ body {
 
 @keyframes minimizeAnimation {
   to {
-    /* transform: translate(calc(100vw / 2 - 50%), calc(100vh - 240px)) scale(0); */
     transform: translate(var(--dock-active-icon-x), var(--dock-active-icon-y))
       scale(0);
 
@@ -122,9 +118,6 @@ body {
     opacity: 0.2;
   }
   to {
-    /* transform: translate(var(--window-to-x), var(--window-to-y)); */
-    /*     width: var(--window-to-width);
-    height: var(--window-to-height); */
     opacity: 0.5;
   }
 }
@@ -154,7 +147,6 @@ body {
 }
 
 .computer-container {
-  /*  background-color: yellow; */
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -173,7 +165,6 @@ body {
 }
 
 .monitor-base {
-  /*  background-color: blue; */
   display: flex;
   justify-content: center;
 }
@@ -186,21 +177,8 @@ body {
 
 .cup-with-steam {
   flex-basis: 100px;
-  /*  background-color: red; */
   position: relative;
 }
-
-/* #light {
-  position: absolute;
-  color: transparent;
-  text-shadow: -4px -3px 20px #f0fb8fb8;
-  font-size: 180px;
-  top: 20%;
-  left: 50%;
-  z-index: 115;
-  cursor: pointer;
-  user-select: none;
-} */
 
 .light-off {
   transition: all 1s;
@@ -240,7 +218,6 @@ body {
 
   overflow: hidden;
 
-  /* background-image: url('https://www.muycomputer.com/wp-content/uploads/2021/06/BigSur.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
@@ -299,32 +276,8 @@ body {
   overflow-y: auto;
 }
 
-/* Barra de desplazamiento para navegadores WebKit (Chrome, Safari, Opera) */
-::-webkit-scrollbar {
-  width: 12px; /* Ancho de la barra de desplazamiento vertical */
-  height: 12px; /* Altura de la barra de desplazamiento horizontal */
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Color de fondo del track */
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888; /* Color del pulgar de la barra de desplazamiento */
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Color del pulgar cuando se pasa el ratón por encima */
-}
-
-/* Barra de desplazamiento para Firefox */
-html {
-  scrollbar-width: thin; /* Grosor de la barra de desplazamiento */
-  scrollbar-color: #888 #f1f1f1; /* Color del pulgar y del track */
-}
-
 /*
-Panes`
+Panes
 */
 .Resizer {
   background: #000;

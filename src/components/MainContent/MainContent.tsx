@@ -358,28 +358,28 @@ const MainContent = forwardRef<HTMLDivElement, MainContentProps>(
           <Section
             id="section-2"
             ref={sectionsRefs[2]}
-            title="HABILIDADES TECNICAS"
+            title={t('cv_content.sections.technical_skills_title')}
           >
-            {/*             Tecnologías HTML 5, CSS 3, Grid, Flexbox, Bootstrap, Tailwind CSS,
-            Styled Components, JavaScript, React, Next.js, React Native,
-            Node.js, Express, SQL, TypeScript, Java, Python, Visual Basic, VBA.
-            Análisis y diseño de sistemas Maquetado desde Figma GIT */}
             <TechContent />
           </Section>
-          <Section id="section-3" ref={sectionsRefs[3]} title="IDIOMAS">
-            <p>Español: Nativo</p>
-            <p>Inglés: Comprensión lectora avanzada / Oral B1</p>
+          <Section
+            id="section-3"
+            ref={sectionsRefs[3]}
+            title={t('cv_content.sections.languages.title')}
+          >
+            <p>{t('cv_content.sections.languages.spanish_level')}</p>
+            <p>{t('cv_content.sections.languages.english_level')}</p>
           </Section>
           <Section
             id="section-4"
             ref={sectionsRefs[4]}
-            title="EDUCACIÓN SUPERIOR"
+            title={t('cv_content.sections.higher_education_title')}
           >
-            <p>• Analista de Sistemas</p>
-            <p>Universidad Nacional de Lujan</p>
+            <p>• {t('cv_content.sections.higher_education.1.degree')}</p>
+            <p>{t('cv_content.sections.higher_education.1.institution')}</p>
 
-            <p>• Programador Superior</p>
-            <p>I.S.F.D. y T. Nº 189</p>
+            <p>• {t('cv_content.sections.higher_education.2.degree')}</p>
+            <p>{t('cv_content.sections.higher_education.2.institution')}</p>
           </Section>
         </ContentContainer>
       </AppContainer>

@@ -443,17 +443,6 @@ function Desktop() {
           handleWindow('state', activeWindow.target, windowStates.RESTORED);
         }, 400);
       }
-
-      if (activeWindow.state === windowStates.RESTORING_FROM_MINIMIZED) {
-        //REFACTOR-> FIX ???
-        /* setTimeout(() => {
-          handleWindow(
-            'state',
-            activeWindow.target,
-            activeWindow.lastWindowState
-          );
-        }, 400); */
-      }
     }
   }, [activeWindow]);
 

@@ -104,6 +104,23 @@
             }
           }
         }
+      },
+      "technical_skills_title": "COMPETENZE TECNICHE",
+      "languages": {
+        "title": "LINGUE",
+        "spanish_level": "Spagnolo: Madrelingua",
+        "english_level": "Inglese: Comprensione avanzata / Parlato B1"
+      },
+      "higher_education_title": "ISTRUZIONE SUPERIORE",
+      "higher_education": {
+        "1": {
+          "degree": "Analista dei Sistemi",
+          "institution": "Università Nazionale di Luján"
+        },
+        "2": {
+          "degree": "Programmatore Superiore",
+          "institution": "I.S.F.D. y T. Nº 189"
+        }
       }
     }
   }
