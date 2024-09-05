@@ -31,11 +31,11 @@ const Container = styled.div`
 
 export default function AboutPorfolio(props: BaseWindowProps) {
   const sectionsRefs = [
-    useRef<HTMLElement>(null),
-    useRef<HTMLElement>(null),
-    useRef<HTMLElement>(null),
-    useRef<HTMLElement>(null),
-    useRef<HTMLElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
   ];
 
   const { observe, visibleEntries } = useIntersectionObserver({

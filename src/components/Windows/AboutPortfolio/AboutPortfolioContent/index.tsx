@@ -44,6 +44,17 @@ interface IdeaSectionContentProps {
 const IdeaSectionContent = styled.div<IdeaSectionContentProps>`
   display: flex;
   flex-direction: ${({ isLarge }) => (isLarge ? 'row' : 'column')};
+  align-items: flex-start;
+
+  div {
+    backdrop-filter: blur(10px);
+  }
+
+  p {
+    margin: 0 20px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
 `;
 
 interface MobileSectionContentProps {
@@ -56,8 +67,9 @@ const MobileSectionContent = styled.div<MobileSectionContentProps>`
 
   justify-content: center;
   width: 90%;
-  background: white;
-  color: black;
+  background: #ffffff40;
+  backdrop-filter: blur(10px);
+  color: #000000;
   padding: 30px;
   border: 1px solid black;
   border-radius: 15px;
@@ -65,7 +77,7 @@ const MobileSectionContent = styled.div<MobileSectionContentProps>`
 `;
 
 interface MainContentProps {
-  sectionsRefs: RefObject<HTMLElement>[];
+  sectionsRefs: RefObject<HTMLDivElement>[];
   contentRef: RefObject<HTMLDivElement>;
 }
 
@@ -156,15 +168,9 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
                 recopilación de proyectos.
               </p>
               <p>
-                Fue esta combinación de factores lo que me llevó a concebir y
-                desarrollar un portafolio interactivo que vaya más allá de lo
-                convencional, ofreciendo una experiencia distinta tanto en
-                desktop como en dispositivos móviles.
-              </p>
-              <p>
-                La idea de crear un portafolio que emulara una computadora y un
-                dispositivo móvil surgió de mi deseo de romper con la estructura
-                tradicional de los sitios de portafolio.
+                Fue esta combinación de factores lo que me llevó a desarrollar
+                un portfolio interactivo, ofreciendo una experiencia distinta
+                tanto en desktop como en dispositivos móviles.
               </p>
               <p>
                 Quería algo que no solo presentara mi trabajo, sino que
@@ -186,7 +192,9 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
             display: 'flex',
             alignItems: 'center',
             flexDirection: 'column',
-            background: 'white',
+            background: 'url(/images/wallpapers/abstract/2.jpg) no-repeat',
+            backgroundSize: 'cover',
+
             color: 'black',
           }}
         >
@@ -196,8 +204,9 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
               display: 'flex',
               alignItems: 'center',
               flexDirection: 'column',
-              background: 'white',
-              color: 'black',
+              /* background: 'white', */
+              backdropFilter: 'blur(10px)',
+              color: 'rgba(255, 255, 255, 0.87)',
               border: '1px solid black',
               borderRadius: '15px',
               boxShadow: 'rgb(0 0 0 / 69%) 0px 0px 12px 0px',

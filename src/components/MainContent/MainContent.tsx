@@ -1,4 +1,4 @@
-import { forwardRef, RefObject } from 'react';
+import { forwardRef, RefObject, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import SchoolIcon from '@material-ui/icons/School';
@@ -36,6 +36,15 @@ const ContentContainer = styled.div`
   overflow-y: auto;
 `;
 
+interface PresentationContainerProps {
+  isLarge: boolean;
+}
+
+const PresentationContainer = styled.div<PresentationContainerProps>`
+  display: flex;
+  flex-direction: ${({ isLarge }) => (isLarge ? 'row' : 'column')};
+`;
+
 const JobTitle = styled.p`
   font-size: 1.8rem !important;
   color: white;
@@ -50,6 +59,26 @@ const MainContent = forwardRef<HTMLDivElement, MainContentProps>(
   ({ sectionsRefs, contentRef }, ref) => {
     const { t } = useTranslation();
 
+    const [isLarge, setIsLarge] = useState(false);
+
+    useEffect(() => {
+      const handleResize = () => {
+        if (contentRef.current) {
+          const mainDivWidth = contentRef.current.clientWidth;
+          setIsLarge(mainDivWidth > 500);
+        }
+      };
+
+      window.addEventListener('resize', handleResize);
+      handleResize();
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
+    console.log({ isLarge });
+
     return (
       <AppContainer id="cv-content">
         <ContentContainer ref={contentRef}>
@@ -58,7 +87,10 @@ const MainContent = forwardRef<HTMLDivElement, MainContentProps>(
             ref={sectionsRefs[0]}
             title={t('cv_content.sections.presentation.title')}
           >
-            <div style={{ display: 'flex' }}>
+            <PresentationContainer
+              style={{ display: 'flex' }}
+              isLarge={isLarge}
+            >
               <img
                 style={{
                   border: '1px solid black',
@@ -66,6 +98,7 @@ const MainContent = forwardRef<HTMLDivElement, MainContentProps>(
                   marginBottom: '20px',
                   marginRight: '20px',
                   width: '150px',
+                  maxHeight: '150px',
                   objectFit: 'cover',
                 }}
                 src="/images/login_avatar.png"
@@ -74,7 +107,7 @@ const MainContent = forwardRef<HTMLDivElement, MainContentProps>(
                 <p>{t('cv_content.sections.presentation.paragraphs.1')}</p>
                 <p>{t('cv_content.sections.presentation.paragraphs.2')}</p>
               </div>
-            </div>
+            </PresentationContainer>
           </Section>
           <Section
             id="section-1"

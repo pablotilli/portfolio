@@ -37,7 +37,6 @@ export const Section = forwardRef<HTMLElement, SectionProps>(
         scale: 1,
         transition: { duration: 0.4 },
       },
-      /*  exit: { opacity: 0, x: 0 }, */
     };
 
     return (
