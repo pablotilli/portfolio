@@ -215,7 +215,7 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
                 del usuario.
               </p>
               <p>
-                Siempre he creído que un portafolio debe ser más que una simple
+                Siempre he creído que un portfolio debe ser más que una simple
                 recopilación de proyectos.
               </p>
               <p>
@@ -283,35 +283,33 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
             ></video>
             <DesktopTextContainer>
               <p>
-                En la versión desktop de mi portafolio, los usuarios se
-                encuentran con un entorno que replica una computadora de
-                escritorio. Aquí, cada sección está representada como un
-                programa diferente que puede abrirse y explorarse.
+                En la versión desktop, los usuarios se encuentran con un entorno
+                que replica una computadora de escritorio. Cada sección está
+                representada como un programa diferente que puede abrirse y
+                explorarse.
               </p>
               <p>
                 Desde el primer momento, los visitantes ven un escritorio con
-                íconos que representan cada sección clave: un dock que facilita
+                íconos que representan cada sección clave y un dock que facilita
                 la navegación y la sensación de estar realmente interactuando
-                con una computadora. Uno de los programas es mi CV, donde he
-                presentado parte de mi trayectoria profesional. Además, en la
-                "app" de documentos, los usuarios pueden descargar una versión
-                en PDF de mi currículum, lo que facilita que tengan una copia
-                física o digital de mi experiencia y habilidades. Otra sección
-                es la carpeta de imágenes, donde he recopilado imagenes de
-                varias de las tecnologías que domino, brindando una vista rápida
-                de mis capacidades técnicas. Además se puede encontrar en el
-                escritorio una "app" para contactarme.
+                con una computadora. Uno de los "programas" es mi CV, donde he
+                presentado parte de mi trayectoria profesional; en Documentos,
+                se puede visualizar y descargar una versión en PDF de mi
+                currículum, lo que facilita que tengan una copia física o
+                digital de mi experiencia y habilidades. Otra sección es la
+                carpeta de imágenes, donde he recopilado imagenes de varias de
+                las tecnologías que domino, brindando una vista rápida de mis
+                capacidades técnicas. Además se puede encontrar en el escritorio
+                un icono para contactarme.
               </p>
               <p>
-                He querido ofrecer también a los usuarios la posibilidad de
-                personalizar su experiencia, reflejando así uno de los
-                principios que más valoro en el desarrollo: la adaptabilidad.
-                Por ello, inclui opciones de configuración que permiten cambiar
-                el fondo de pantalla, modificar el esquema de colores para
-                adaptarse a diferentes preferencias visuales y seleccionar el
-                idioma de navegación. Incluso he añadido la posibilidad de
-                agregar o quitar widgets, permitiendo una personalización que
-                hace que cada visita al portafolio pueda ser diferente.
+                He querido ofrecer también la posibilidad de personalizar la
+                experiencia, incluyendo opciones de configuración que permiten
+                cambiar el fondo de pantalla, modificar el esquema de colores
+                para adaptarse a diferentes preferencias visuales, seleccionar
+                el idioma de navegación y agregar o quitar widgets del
+                escritorio (Por el momento solo el clima pero ire aregando
+                nuevos).
               </p>
             </DesktopTextContainer>
           </div>
@@ -357,12 +355,12 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
                 móviles, me di cuenta de que necesitaba un enfoque que
                 mantuviera el concepto central de interacción, pero que también
                 respetara las limitaciones y oportunidades de las pantallas más
-                pequeñas. Así, en la versión mobile de mi portafolio, trasladé
-                el concepto de la computadora a una emulación de la interfaz de
-                un celular. Esto no solo preserva la idea de interactividad,
-                sino que también garantiza que el portafolio sea accesible y
-                usable en cualquier dispositivo, lo que es crucial en un mundo
-                donde el tráfico móvil sigue creciendo.
+                pequeñas. Así, en la versión mobile, trasladé el concepto de la
+                computadora a una emulación de la interfaz de un celular. Esto
+                no solo preserva la idea de interactividad, sino que también
+                garantiza que el portfolio sea accesible y usable en cualquier
+                dispositivo, lo que es crucial en un mundo donde el tráfico
+                móvil sigue creciendo.
               </p>
               <p>
                 La versión mobile ofrece una navegación sencilla y mantiene las
