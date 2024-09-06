@@ -9,8 +9,6 @@ import BaseWindow from '../BaseWindow';
 import '../../Desktop/styles.css';
 import { useEffect, useRef, useState } from 'react';
 import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
-/* import Minimap from 'minimap-react';
-import 'minimap-react/lib/react-minimap.css'; */
 
 import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 
@@ -22,6 +20,8 @@ const ActivityBar = styled.div`
   border-right: 1px solid black;
   height: 100%;
   display: flex;
+
+  color: ${({ theme }) => theme.mainTextColor};
 
   span {
     border-left: 2px solid blue;
@@ -63,6 +63,8 @@ const BreadCrumbs = styled.div`
   display: flex;
   align-items: center;
   border-bottom: 2px solid black;
+
+  color: ${({ theme }) => theme.mainTextColor};
 
   span {
     margin-left: 10px;

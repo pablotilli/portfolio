@@ -7,7 +7,7 @@ import FileExplorerSidebar from '../../FileExplorerSidebar';
 
 import 'slick-carousel/slick/slick.css';
 
-import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
+import { useAppSelector } from '../../../hooks/reduxHooks';
 
 import {
   selectDocumentsFiles,
@@ -18,18 +18,17 @@ import {
 import './styles.css';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 import FilesList from '../../FilesList';
 
 interface BaseWindowProps {
-  handleWindow: (event: string, windowName: string, data: any) => void; // Ajusta el tipo según sea necesario
-  window: any; // Ajusta el tipo según sea necesario
-  handleWindowNEW: (info: Array<any>) => void; // Ajusta el tipo según sea necesario
+  handleWindow: (event: string, windowName: string, data: any) => void;
+  window: any;
+  handleWindowNEW: (info: Array<any>) => void;
 
   windowName: string;
   activeDockIconPosition: { x: number; y: number };
   backgroundColor?: string;
-  handleActiveWindow: (activeWindowName: string) => void; // Ajusta el tipo según sea necesario
+  handleActiveWindow: (activeWindowName: string) => void;
   isActiveWindow: boolean;
   visible: boolean;
 }
@@ -39,7 +38,8 @@ interface FileExplorerWindow extends BaseWindowProps {
 }
 
 const Container = styled.div`
-  background-color: #2f2f2f;
+  background-color: ${({ theme }) => theme.titleBarBackgroundColor};
+  color: ${({ theme }) => theme.mainTextColor};
 
   overflow-y: auto;
 
@@ -79,8 +79,6 @@ const FileIcon = styled.div`
 `;
 
 export default function FileExplorerWindow(props: FileExplorerWindow) {
-  const dispatch = useAppDispatch();
-
   const imagesFiles = useAppSelector(selectImagesFiles);
   const documentsFiles = useAppSelector(selectDocumentsFiles);
 

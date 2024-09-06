@@ -9,6 +9,8 @@ const SidebarContainer = styled.nav`
   flex-direction: column;
   width: 100%;
 
+  color: ${({ theme }) => theme.mainTextColor};
+
   border-top: 1px solid #363535;
 `;
 

@@ -8,6 +8,8 @@ const SectionContainer = styled(motion.section)`
   border-bottom: 1px solid #ddd;
   max-width: 700px;
 
+  color: ${({ theme }) => theme.mainTextColor};
+
   h2 {
     margin-top: 0;
     margin-bottom: 20px;

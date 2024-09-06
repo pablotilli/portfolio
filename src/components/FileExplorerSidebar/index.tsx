@@ -1,5 +1,13 @@
-import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import './styles.css';
+
+const MainContainer = styled.div`
+  background-color: ${({ theme }) => theme.mainBackgroundColor};
+  color: ${({ theme }) => theme.mainTextColor};
+
+  width: 100% !important;
+  height: 100%;
+`;
 
 const FileExplorerSidebar = ({
   section,
@@ -9,7 +17,7 @@ const FileExplorerSidebar = ({
   onSectionChange: (section: string) => void;
 }) => {
   return (
-    <div className="file-explorer-sidebar">
+    <MainContainer>
       <ul>
         <li
           className="sidebar-file-explorer-item"
@@ -26,7 +34,7 @@ const FileExplorerSidebar = ({
           <span>Images</span>
         </li>
       </ul>
-    </div>
+    </MainContainer>
   );
 };
 

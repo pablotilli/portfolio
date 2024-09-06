@@ -1,9 +1,3 @@
-.file-explorer-sidebar {
-  width: 100% !important;
-  height: 100%;
-  background-color: #29282b;
-}
-
 .file-explorer-sidebar ul {
   list-style-type: none;
   padding: 0;
