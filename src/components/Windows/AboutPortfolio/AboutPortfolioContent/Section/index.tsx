@@ -18,6 +18,11 @@ const SectionContainer = styled.div`
     margin-bottom: 60px;
     font-size: 2rem;
   }
+
+  @media (max-width: 900px) {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
 `;
 
 interface SectionProps {

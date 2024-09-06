@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { forwardRef, ReactNode, useCallback, useRef } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const SectionContainer = styled(motion.section)`
   padding: 15px 20px;
@@ -30,24 +30,8 @@ export const Section = forwardRef<HTMLElement, SectionProps>(
   ({ id, title, children }, ref) => {
     const titleRef = useRef<HTMLHeadingElement>(null);
 
-    const variants = {
-      hidden: { opacity: 0, scale: 0.8 },
-      visible: {
-        opacity: 1,
-        scale: 1,
-        transition: { duration: 0.4 },
-      },
-    };
-
     return (
-      <SectionContainer
-        id={id}
-        ref={ref}
-        /*         variants={variants}
-        initial="hidden"
-        whileInView="visible" */
-        className="highlight"
-      >
+      <SectionContainer id={id} ref={ref} className="highlight">
         <h2 ref={titleRef}>{title}</h2>
         {children}
       </SectionContainer>

@@ -44,6 +44,11 @@ export default function TechContent() {
       </TechItem>
 
       <TechItem>
+        <img src="/images/logos/logo_redux.png" alt="Redux Logo" />
+        <span>Redux</span>
+      </TechItem>
+
+      <TechItem>
         <img src="/images/logos/logo_express.png" alt="Express Logo" />
         <span>Express</span>
       </TechItem>

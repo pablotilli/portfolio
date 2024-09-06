@@ -74,6 +74,55 @@ const MobileSectionContent = styled.div<MobileSectionContentProps>`
   border: 1px solid black;
   border-radius: 15px;
   box-shadow: rgb(0 0 0 / 69%) 0px 0px 12px 0px;
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    padding: 0;
+    padding-top: 20px;
+
+    video {
+      width: 90%;
+      align-self: center;
+    }
+  }
+`;
+
+interface ConclusionSectionContentProps {
+  isLarge: boolean;
+}
+
+const ConclusionSectionContent = styled.div<ConclusionSectionContentProps>`
+  display: flex;
+  flex-direction: ${({ isLarge }) => (isLarge ? 'row' : 'column')};
+
+  justify-content: center;
+  width: 90%;
+  background: #ffffff40;
+  backdrop-filter: blur(10px);
+  color: #000000;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: rgb(0 0 0 / 69%) 0px 0px 12px 0px;
+`;
+
+interface TechnologiesSectionContentProps {
+  isLarge: boolean;
+}
+
+const TechnologiesSectionContent = styled.div<TechnologiesSectionContentProps>`
+  display: flex;
+  flex-direction: ${({ isLarge }) => (isLarge ? 'row' : 'column')};
+
+  justify-content: center;
+  width: 90%;
+  background: #ffffff40;
+  backdrop-filter: blur(10px);
+  color: #000000;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: rgb(0 0 0 / 69%) 0px 0px 12px 0px;
 `;
 
 interface MainContentProps {
@@ -81,38 +130,48 @@ interface MainContentProps {
   contentRef: RefObject<HTMLDivElement>;
 }
 
+const TechContentContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 50px;
+
+  margin: 30px 0;
+`;
+
+const TechItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    object-fit: contain;
+    flex: 1;
+  }
+
+  span {
+    text-align: center;
+  }
+`;
+
+const CubeImage = styled.img`
+  object-fit: contain;
+  width: 20vw;
+  margin-right: 30px;
+  filter: drop-shadow(2px 4px 6px black);
+
+  @media (max-width: 900px) {
+    width: 60vw;
+    align-self: center;
+    padding-bottom: 20px;
+  }
+`;
+
 const AboutPortfolioContent: React.FC<MainContentProps> = ({
   sectionsRefs,
   contentRef,
 }) => {
-  const parallaxRefs: RefObject<HTMLDivElement>[] = [
-    useRef<HTMLDivElement>(null),
-    useRef<HTMLDivElement>(null),
-  ];
-
-  /*   useEffect(() => console.log({ parallaxRefs }), [parallaxRefs]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      parallaxRefs.forEach((sectionRef) => {
-        console.log({ sectionRef });
-        const section = sectionRef.current;
-        if (section) {
-          const offset = contentRef.current?.scrollTop || 0;
-      
-          section.style.backgroundPosition = `center ${offset * 0.2}px`;
-        }
-      });
-    };
-
-    const contentElement = contentRef.current;
-    contentElement?.addEventListener('scroll', handleScroll);
-
-    return () => {
-      contentElement?.removeEventListener('scroll', handleScroll);
-    };
-  }, [parallaxRefs, contentRef]); */
-
   const [isLarge, setIsLarge] = useState(false);
 
   useEffect(() => {
@@ -131,22 +190,14 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
     };
   }, []);
 
-  console.log({ isLarge });
-
   return (
     <AppContainer>
       <ContentContainer ref={contentRef}>
         <Section id="section-0" ref={sectionsRefs[0]} title="">
           <IdeaSectionContent isLarge={isLarge}>
-            <img
+            <CubeImage
               src="/images/about_section/rubik-cube.png"
               alt="Pablo Tilli Portfolio - Rubik cube"
-              style={{
-                objectFit: 'contain',
-                width: '20vw',
-                marginRight: '30px',
-                filter: 'drop-shadow(2px 4px 6px black)',
-              }}
             />
             <div
               style={{
@@ -200,7 +251,7 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
         >
           <div
             style={{
-              width: '90%',
+              width: '100%',
               display: 'flex',
               alignItems: 'center',
               flexDirection: 'column',
@@ -271,17 +322,8 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
           ref={parallaxRefs[1]}
           title=""
           style={{
-            height: '500px',
             backgroundImage:
               'url(/images/about_section/mobile_version_header.png)',
-            backgroundColor: 'white',
-            backgroundPosition: 'top',
-            backgroundAttachment: 'fixed',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '400px',
-            padding: '20px',
-            paddingBottom: '0',
-            color: 'black',
           }}
         ></Section> */}
 
@@ -303,7 +345,6 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
             <video
               style={{
                 height: '100%',
-                /* marginTop: '30px', */
               }}
               src="/videos/demo_mobile_1.webm"
               autoPlay
@@ -333,19 +374,107 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
           </MobileSectionContent>
         </Section>
 
-        <Section id="section-3" ref={sectionsRefs[3]} title="Conclusión">
-          A través de este portafolio, no solo he querido mostrar lo que sé
-          hacer, sino también cómo lo hago, destacando mi enfoque en la
-          experiencia del usuario, la adaptabilidad, y la capacidad de
-          transformar ideas en productos digitales que son tanto funcionales
-          como visualmente atractivos. Este proyecto es una culminación de mi
-          pasión por la tecnología y la innovación, y refleja mi compromiso con
-          la creación de experiencias digitales que sean tanto prácticas como
-          emocionantes.
+        <Section
+          id="section-3"
+          ref={sectionsRefs[3]}
+          title="Conclusión"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
+          }}
+        >
+          <ConclusionSectionContent isLarge={isLarge}>
+            A través de este portafolio, no solo he querido mostrar lo que sé
+            hacer, sino también cómo lo hago, destacando mi enfoque en la
+            experiencia del usuario, la adaptabilidad, y la capacidad de
+            transformar ideas en productos digitales que son tanto funcionales
+            como visualmente atractivos. Este proyecto es una culminación de mi
+            pasión por la tecnología y la innovación, y refleja mi compromiso
+            con la creación de experiencias digitales que sean tanto prácticas
+            como emocionantes.
+          </ConclusionSectionContent>
         </Section>
 
-        <Section id="section-4" ref={sectionsRefs[4]} title="Tecnologías">
-          hhh
+        <Section
+          id="section-4"
+          ref={sectionsRefs[4]}
+          title="Tecnologías"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
+          }}
+        >
+          <TechnologiesSectionContent isLarge={isLarge}>
+            <TechContentContainer>
+              <TechItem>
+                <img src="/images/logos/logo_html.png" alt="HTML Logo" />
+                <span>HTML</span>
+              </TechItem>
+
+              <TechItem>
+                <img src="/images/logos/logo_css.png" alt="CSS Logo" />
+                <span>CSS</span>
+              </TechItem>
+
+              <TechItem>
+                <img
+                  src="/images/logos/logo_tailwindcss.png"
+                  alt="Tailwind CSS Logo"
+                />
+                <span>Tailwind CSS</span>
+              </TechItem>
+
+              <TechItem>
+                <img src="/images/logos/logo_js.png" alt="JavaScript Logo" />
+                <span>JavaScript</span>
+              </TechItem>
+
+              <TechItem>
+                <img src="/images/logos/ts-logo.png" alt="Typescript Logo" />
+                <span>Typescript</span>
+              </TechItem>
+
+              <TechItem>
+                <img src="/images/logos/logo_react.png" alt="React Logo" />
+                <span>React</span>
+              </TechItem>
+
+              <TechItem>
+                <img src="/images/logos/logo_redux.png" alt="Redux Logo" />
+                <span>Redux</span>
+              </TechItem>
+
+              <TechItem>
+                <img
+                  src="/images/logos/styled-components-logo.png"
+                  alt="Styled Components Logo"
+                />
+                <span>Styled Components</span>
+              </TechItem>
+
+              <TechItem>
+                <img src="/images/logos/logo_nodejs.png" alt="Node.js Logo" />
+                <span>Node.js</span>
+              </TechItem>
+
+              <TechItem>
+                <img src="/images/logos/logo_express.png" alt="Express Logo" />
+                <span>Express</span>
+              </TechItem>
+
+              <TechItem>
+                <img src="/images/logos/logo_sql.png" alt="SQL Logo" />
+                <span>SQL</span>
+              </TechItem>
+
+              <TechItem>
+                <img src="/images/logos/logo_git.png" alt="GIT Logo" />
+                <span>GIT</span>
+              </TechItem>
+            </TechContentContainer>
+          </TechnologiesSectionContent>
         </Section>
       </ContentContainer>
     </AppContainer>
