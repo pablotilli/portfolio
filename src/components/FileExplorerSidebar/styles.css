@@ -24,10 +24,21 @@
 .sidebar-file-explorer-item {
   padding: 8px 15px;
   display: flex;
+  margin: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
 }
 
 .sidebar-file-explorer-item img {
   width: 25px;
   aspect-ratio: 1/1;
   margin-right: 8px;
+}
+
+.sidebar-file-explorer-item.active {
+  background-color: #d3e3fd;
+  border-radius: 5px;
+  color: black;
 }

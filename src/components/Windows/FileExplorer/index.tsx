@@ -117,7 +117,7 @@ export default function FileExplorerWindow(props: FileExplorerWindow) {
         className="split-pane"
       >
         <FileExplorerSidebar
-          section={props.section}
+          section={activeSection}
           onSectionChange={handleSectionChange}
         />
 

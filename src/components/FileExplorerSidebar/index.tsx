@@ -13,21 +13,26 @@ const FileExplorerSidebar = ({
   section,
   onSectionChange,
 }: {
-  section: string;
+  section: string | null;
   onSectionChange: (section: string) => void;
 }) => {
+  console.log(section);
   return (
     <MainContainer>
       <ul>
         <li
-          className="sidebar-file-explorer-item"
+          className={`sidebar-file-explorer-item ${
+            section === '/documents' ? 'active' : ''
+          }`}
           onClick={() => onSectionChange('/documents')}
         >
           <img src="/images/documents_icon.png" alt="" />
           <span>Documents</span>
         </li>
         <li
-          className="sidebar-file-explorer-item"
+          className={`sidebar-file-explorer-item ${
+            section === '/images' ? 'active' : ''
+          }`}
           onClick={() => onSectionChange('/images')}
         >
           <img src="/images/pictures_icon.png" alt="" />

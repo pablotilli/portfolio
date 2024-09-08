@@ -123,5 +123,40 @@
         }
       }
     }
+  },
+
+  "about_portfolio_content": {
+    "sections": [
+      {
+        "title": "L'idea",
+        "paragraphs": {
+          "1": "Nel corso della mia carriera professionale, sono stato costantemente alla ricerca di nuovi modi per innovare e mettere in risalto non solo le mie competenze tecniche, ma anche il mio approccio all'esperienza utente.",
+          "2": "Ho sempre creduto che un portfolio debba essere più di una semplice raccolta di progetti.",
+          "3": "È stata questa combinazione di fattori che mi ha portato a sviluppare un portfolio interattivo, offrendo un'esperienza diversa sia su desktop che su dispositivi mobili.",
+          "4": "Volevo qualcosa che non solo presentasse il mio lavoro, ma che coinvolgesse i visitatori in modo più dinamico e immersivo. L'idea era quella di trasmettere la familiarità che tutti abbiamo con i nostri computer e telefoni, rendendo la navigazione intuitiva e allo stesso tempo divertente."
+        }
+      },
+      {
+        "title": "Esperienza Desktop",
+        "paragraphs": {
+          "1": "Nella versione desktop, gli utenti si trovano in un ambiente che replica un computer desktop. Ogni sezione è rappresentata come un programma diverso che può essere aperto ed esplorato.",
+          "2": "Fin dal primo momento, i visitatori vedono un desktop con icone che rappresentano ogni sezione chiave e un dock che facilita la navigazione, dando la sensazione di interagire realmente con un computer. Uno dei 'programmi' è il mio CV, dove ho presentato parte del mio percorso professionale. Nella sezione Documenti, è possibile visualizzare e scaricare una versione PDF del mio curriculum, rendendo facile avere una copia fisica o digitale della mia esperienza e competenze. Un'altra sezione è la cartella delle immagini, dove ho raccolto immagini di varie tecnologie che conosco, fornendo una rapida panoramica delle mie capacità tecniche. Sul desktop è presente anche un'icona per contattarmi.",
+          "3": "Ho voluto anche offrire la possibilità di personalizzare l'esperienza, includendo opzioni di configurazione che permettono di cambiare lo sfondo, modificare lo schema dei colori per adattarsi a diverse preferenze visive, selezionare la lingua di navigazione e aggiungere o rimuovere widget dal desktop (Per il momento solo il widget del meteo, ma ne aggiungerò altri in futuro)."
+        }
+      },
+      {
+        "title": "Esperienza Mobile",
+        "paragraphs": {
+          "1": "Quando ho pensato a come adattare questa esperienza ai dispositivi mobili, mi sono reso conto che avevo bisogno di un approccio che mantenesse il concetto centrale di interazione, ma che rispettasse anche le limitazioni e le opportunità degli schermi più piccoli. Così, nella versione mobile, ho trasferito il concetto di computer a un'emulazione dell'interfaccia di un telefono. Questo non solo preserva l'idea di interattività, ma garantisce anche che il portfolio sia accessibile e utilizzabile su qualsiasi dispositivo, cosa fondamentale in un mondo in cui il traffico mobile continua a crescere.",
+          "2": "La versione mobile offre una navigazione semplice e mantiene le opzioni di personalizzazione, assicurando che gli utenti abbiano un'esperienza altrettanto ricca e adattata alle loro preferenze come nella versione desktop."
+        }
+      },
+      {
+        "title": "Conclusione",
+        "paragraphs": {
+          "1": "Attraverso questo portfolio, non ho voluto solo mostrare ciò che so fare, ma anche come lo faccio, mettendo in evidenza il mio approccio all'esperienza utente, l'adattabilità e la capacità di trasformare idee in prodotti digitali che siano sia funzionali che visivamente attraenti."
+        }
+      }
+    ]
   }
 }

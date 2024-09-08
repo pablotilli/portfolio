@@ -255,7 +255,6 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
               display: 'flex',
               alignItems: 'center',
               flexDirection: 'column',
-              /* background: 'white', */
               backdropFilter: 'blur(10px)',
               color: 'rgba(255, 255, 255, 0.87)',
               border: '1px solid black',
