@@ -13,6 +13,7 @@ import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver'
 import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 const ActivityBar = styled.div`
   border-top: 1px solid #363535;
@@ -100,9 +101,7 @@ export default function CvWindow(props: BaseWindowProps) {
   });
   const [currentSection, setCurrentSection] = useState(0);
 
-  useEffect(() => {
-    console.log('Avisar!!');
-  }, [currentSection]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     sectionsRefs.forEach((ref) => {
@@ -145,7 +144,20 @@ export default function CvWindow(props: BaseWindowProps) {
     }
   };
 
+  const sections = [
+    t('cv_content.sections.presentation.title'),
+    t('cv_content.sections.work_experience.title'),
+    t('cv_content.sections.technical_skills_title'),
+    t('cv_content.sections.languages.title'),
+    t('cv_content.sections.higher_education_title'),
+  ];
+
   const mainContentRef = useRef<HTMLDivElement>(null);
+
+  function capitalizeString(str: string) {
+    if (!str) return str;
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  }
 
   return (
     <BaseWindow {...props}>
@@ -167,6 +179,7 @@ export default function CvWindow(props: BaseWindowProps) {
           <Sidebar
             currentSection={currentSection}
             handleScrollTo={handleScrollTo}
+            sections={sections}
           />
 
           <SplitPane
@@ -180,14 +193,15 @@ export default function CvWindow(props: BaseWindowProps) {
           >
             <div style={{ width: '100%', height: 'calc(100% - 80px)' }}>
               <TabsBar>
-                <span>CV</span>
+                <span>{t('CV')}</span>
                 <InactiveTabsContainer
                   style={{ flex: 1, height: '50px;' }}
                 ></InactiveTabsContainer>
               </TabsBar>
               <BreadCrumbs>
                 <span>
-                  Pablo Tilli {'>'} CV {'>'} Presentación
+                  Pablo Tilli {'>'} {t('CV')} {'>'}{' '}
+                  {capitalizeString(sections[currentSection])}
                 </span>
               </BreadCrumbs>
 

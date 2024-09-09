@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import './styles.css';
+import { useTranslation } from 'react-i18next';
 
 const MainContainer = styled.div`
   background-color: ${({ theme }) => theme.mainBackgroundColor};
@@ -16,7 +17,8 @@ const FileExplorerSidebar = ({
   section: string | null;
   onSectionChange: (section: string) => void;
 }) => {
-  console.log(section);
+  const { t } = useTranslation();
+
   return (
     <MainContainer>
       <ul>
@@ -27,7 +29,7 @@ const FileExplorerSidebar = ({
           onClick={() => onSectionChange('/documents')}
         >
           <img src="/images/documents_icon.png" alt="" />
-          <span>Documents</span>
+          <span>{t('documents')}</span>
         </li>
         <li
           className={`sidebar-file-explorer-item ${
@@ -36,7 +38,7 @@ const FileExplorerSidebar = ({
           onClick={() => onSectionChange('/images')}
         >
           <img src="/images/pictures_icon.png" alt="" />
-          <span>Images</span>
+          <span>{t('images')}</span>
         </li>
       </ul>
     </MainContainer>

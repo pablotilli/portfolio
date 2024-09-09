@@ -1,5 +1,5 @@
 {
-  "CV": "CV",
+  "CV": "Resume",
   "contact": "Contact",
   "about_this_proyect": "About This Project",
   "documents": "Documents",
@@ -13,6 +13,15 @@
   "es_language": "Spanish",
   "it_language": "Italian",
   "weather": "Weather",
+  "details": "Details",
+  "name": "Name",
+  "email": "Email",
+  "subject": "Subject",
+  "send_message": "Send Message",
+  "name_field_is_required": "Name is required",
+  "email_field_is_required": "Email is required",
+  "subject_field_is_required": "Subject is required",
+  "invalid_email": "Invalid email",
 
   "cv_content": {
     "sections": {
@@ -126,39 +135,41 @@
       }
     }
   },
-
   "about_portfolio_content": {
-    "sections": [
-      {
+    "sections": {
+      "the_idea": {
         "title": "The Idea",
         "paragraphs": {
-          "1": "Throughout my professional career, I have been in constant search of new ways to innovate and highlight not only my technical skills but also my focus on user experience.",
-          "2": "I have always believed that a portfolio should be more than just a collection of projects.",
-          "3": "It was this combination of factors that led me to develop an interactive portfolio, offering a different experience on both desktop and mobile devices.",
-          "4": "I wanted something that not only showcased my work but also engaged visitors in a more dynamic and immersive way. The idea was to bring the familiarity we all have with our own computers and phones, making navigation intuitive while also fun."
+          "1": "Throughout my professional career, I have been in constant pursuit of new ways to innovate and showcase not only my technical skills but also my focus on user experience.",
+          "2": "I have always believed that a portfolio should be more than just a simple collection of projects.",
+          "3": "It was this combination of factors that led me to develop an interactive portfolio, offering a unique experience both on desktop and mobile devices.",
+          "4": "I wanted something that not only showcased my work but engaged visitors in a more dynamic and immersive way. The idea was to bring the familiarity we all have with our own computers and phones, making navigation intuitive and, at the same time, enjoyable."
         }
       },
-      {
+      "desktop_experience": {
         "title": "Desktop Experience",
         "paragraphs": {
           "1": "In the desktop version, users encounter an environment that replicates a desktop computer. Each section is represented as a different program that can be opened and explored.",
-          "2": "From the first moment, visitors see a desktop with icons representing each key section and a dock that facilitates navigation, making them feel as though they are truly interacting with a computer. One of the 'programs' is my resume, where I have presented part of my professional background. In Documents, a PDF version of my resume can be viewed and downloaded, making it easy to have a physical or digital copy of my experience and skills. Another section is the image folder, where I have collected images of various technologies I master, providing a quick view of my technical capabilities. There's also an icon on the desktop to contact me.",
-          "3": "I also wanted to offer the possibility of customizing the experience, including settings options that allow changing the wallpaper, modifying the color scheme to suit different visual preferences, selecting the navigation language, and adding or removing desktop widgets (Currently, only the weather widget is available, but I will add new ones soon)."
+          "2": "From the very beginning, visitors see a desktop with icons representing each key section and a dock that facilitates navigation and gives the sensation of truly interacting with a computer. One of the 'programs' is my resume, where I have presented part of my professional background; in Documents, a PDF version of my resume can be viewed and downloaded, making it easy to have a physical or digital copy of my experience and skills. Another section is the image folder, where I have compiled pictures of various technologies I master, providing a quick view of my technical capabilities. Additionally, there is an icon on the desktop for contacting me.",
+          "3": "I also wanted to offer the ability to customize the experience, including configuration options that allow changing the wallpaper, modifying the color scheme to suit different visual preferences, selecting the navigation language, and adding or removing desktop widgets (for now, only the weather, but I will keep adding new ones)."
         }
       },
-      {
+      "mobile_experience": {
         "title": "Mobile Experience",
         "paragraphs": {
-          "1": "When I thought about how to adapt this experience to mobile devices, I realized I needed an approach that maintained the core concept of interaction but also respected the limitations and opportunities of smaller screens. Thus, in the mobile version, I brought the desktop concept into an emulation of a phone interface. This not only preserves the idea of interactivity but also ensures that the portfolio is accessible and usable on any device, which is crucial in a world where mobile traffic continues to grow.",
-          "2": "The mobile version offers simple navigation and maintains the customization options, ensuring that users have an experience as rich and tailored to their preferences as in the desktop version."
+          "1": "When I thought about how to adapt this experience to mobile devices, I realized I needed an approach that maintained the core concept of interaction while also respecting the limitations and opportunities of smaller screens. Thus, in the mobile version, I transferred the desktop concept to an emulation of a phone interface. This not only preserves the idea of interactivity but also ensures that the portfolio is accessible and usable on any device, which is crucial in a world where mobile traffic continues to grow.",
+          "2": "The mobile version offers simple navigation and retains the customization options, ensuring that users have a rich experience tailored to their preferences just like in the desktop version."
         }
       },
-      {
+      "conclusion": {
         "title": "Conclusion",
         "paragraphs": {
           "1": "Through this portfolio, I not only wanted to showcase what I can do but also how I do it, highlighting my focus on user experience, adaptability, and the ability to transform ideas into digital products that are both functional and visually appealing."
         }
+      },
+      "technologies": {
+        "title": "Technologies"
       }
-    ]
+    }
   }
 }

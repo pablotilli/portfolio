@@ -16,6 +16,7 @@ import {
 } from './styles';
 
 import SendIcon from '@material-ui/icons/Send';
+import { useTranslation } from 'react-i18next';
 
 interface FormValues {
   name: string;
@@ -23,15 +24,17 @@ interface FormValues {
   subject: string;
 }
 
-const validationSchema = Yup.object({
-  name: Yup.string().required('El nombre es obligatorio'),
-  email: Yup.string()
-    .email('Email inválido')
-    .required('El email es obligatorio'),
-  subject: Yup.string().required('El asunto es obligatorio'),
-});
-
 const ContactForm: React.FC = () => {
+  const { t } = useTranslation();
+
+  const validationSchema = Yup.object({
+    name: Yup.string().required(t('name_field_is_required')),
+    email: Yup.string()
+      .email(t('invalid_email'))
+      .required(t('email_field_is_required')),
+    subject: Yup.string().required(t('subject_field_is_required')),
+  });
+
   const formik = useFormik<FormValues>({
     initialValues: {
       name: '',
@@ -55,7 +58,7 @@ const ContactForm: React.FC = () => {
           <TwoColumnsContainer>
             <FieldsColumn>
               <FormField>
-                <Label htmlFor="name">Nombre</Label>
+                <Label htmlFor="name">{t('name')}</Label>
                 <Input
                   id="name"
                   name="name"
@@ -72,7 +75,7 @@ const ContactForm: React.FC = () => {
               </FormField>
 
               <FormField>
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t('email')}</Label>
                 <Input
                   id="email"
                   name="email"
@@ -93,7 +96,7 @@ const ContactForm: React.FC = () => {
             </ImageColumn>
           </TwoColumnsContainer>
           <FormField>
-            <Label htmlFor="subject">Asunto</Label>
+            <Label htmlFor="subject">{t('subject')}</Label>
             <TextArea
               id="subject"
               name="subject"
@@ -112,7 +115,7 @@ const ContactForm: React.FC = () => {
 
         <Button type="submit">
           <SendIcon />
-          <span>Enviar Mensaje</span>
+          <span>{t('send_message')}</span>
         </Button>
       </form>
     </Container>

@@ -7,6 +7,7 @@ import './Sidebar.css';
 
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Container = styled.div`
   /* padding: 20px; */
@@ -39,6 +40,8 @@ const AboutPortfolioNavbar: React.FC<SidebarProps> = ({
   currentSection,
   handleScrollTo,
 }) => {
+  const { t } = useTranslation();
+
   const sections = [
     'Presentación!!!',
     'Experiencia laboral',
@@ -67,23 +70,51 @@ const AboutPortfolioNavbar: React.FC<SidebarProps> = ({
     }; */
   }
 
-  const [tabs, setTabs] = useState([
-    { id: '0', favicon: ideaIcon, title: 'La Idea', active: true },
-    {
-      id: '1',
-      favicon: desktopIcon,
-      title: 'Experiencia Desktop',
-      active: false,
-    },
-    {
-      id: '2',
-      favicon: mobileIcon,
-      title: 'Experiencia Móvil',
-      active: false,
-    },
-    { id: '3', favicon: conclusionIcon, title: 'Conclusión', active: false },
-    { id: '4', favicon: techIcon, title: 'Tecnologías', active: false },
-  ]);
+  interface Tabs {
+    id: string;
+    favicon: string;
+    title: string;
+    active: boolean;
+  }
+
+  const [tabs, setTabs] = useState<Tabs[]>([]);
+
+  const initTabs = () => {
+    setTabs([
+      {
+        id: '0',
+        favicon: ideaIcon,
+        title: t('about_portfolio_content.sections.the_idea.title'),
+        active: true,
+      },
+      {
+        id: '1',
+        favicon: desktopIcon,
+        title: t('about_portfolio_content.sections.desktop_experience.title'),
+        active: false,
+      },
+      {
+        id: '2',
+        favicon: mobileIcon,
+        title: t('about_portfolio_content.sections.mobile_experience.title'),
+        active: false,
+      },
+      {
+        id: '3',
+        favicon: conclusionIcon,
+        title: t('about_portfolio_content.sections.conclusion.title'),
+        active: false,
+      },
+      {
+        id: '4',
+        favicon: techIcon,
+        title: t('about_portfolio_content.sections.technologies.title'),
+        active: false,
+      },
+    ]);
+  };
+
+  useEffect(initTabs, [t]);
 
   const [darkMode, setDarkMode] = useState(true);
 

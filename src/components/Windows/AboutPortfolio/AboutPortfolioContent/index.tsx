@@ -1,6 +1,8 @@
 import React, { RefObject, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
+import { useTranslation } from 'react-i18next';
+
 import { Section } from './Section';
 import Titlebar from '../../../Titlebar/TitleBar';
 
@@ -173,6 +175,7 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
   contentRef,
 }) => {
   const [isLarge, setIsLarge] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -207,28 +210,18 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
                 borderRadius: '4px',
               }}
             >
-              <h2>La Idea</h2>
+              <h2>{t('about_portfolio_content.sections.the_idea.title')}</h2>
               <p>
-                A lo largo de mi carrera profesional he estado en constante
-                búsqueda de nuevas formas de innovar y destacar no solo mis
-                habilidades técnicas, sino también mi enfoque en la experiencia
-                del usuario.
+                {t('about_portfolio_content.sections.the_idea.paragraphs.1')}
               </p>
               <p>
-                Siempre he creído que un portfolio debe ser más que una simple
-                recopilación de proyectos.
+                {t('about_portfolio_content.sections.the_idea.paragraphs.2')}
               </p>
               <p>
-                Fue esta combinación de factores lo que me llevó a desarrollar
-                un portfolio interactivo, ofreciendo una experiencia distinta
-                tanto en desktop como en dispositivos móviles.
+                {t('about_portfolio_content.sections.the_idea.paragraphs.3')}
               </p>
               <p>
-                Quería algo que no solo presentara mi trabajo, sino que
-                involucrara a los visitantes de una manera más dinámica e
-                inmersiva. La idea fue trasladar la familiaridad que todos
-                tenemos con nuestras propias computadoras y celulares, haciendo
-                que la navegación fuera intuitiva y, al mismo tiempo, divertida.
+                {t('about_portfolio_content.sections.the_idea.paragraphs.4')}
               </p>
             </div>
           </IdeaSectionContent>
@@ -237,7 +230,7 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
         <Section
           id="section-1"
           ref={sectionsRefs[1]}
-          title="Experiencia Desktop"
+          title={t('about_portfolio_content.sections.desktop_experience.title')}
           style={{
             width: '100%',
             display: 'flex',
@@ -282,33 +275,19 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
             ></video>
             <DesktopTextContainer>
               <p>
-                En la versión desktop, los usuarios se encuentran con un entorno
-                que replica una computadora de escritorio. Cada sección está
-                representada como un programa diferente que puede abrirse y
-                explorarse.
+                {t(
+                  'about_portfolio_content.sections.desktop_experience.paragraphs.1'
+                )}
               </p>
               <p>
-                Desde el primer momento, los visitantes ven un escritorio con
-                íconos que representan cada sección clave y un dock que facilita
-                la navegación y la sensación de estar realmente interactuando
-                con una computadora. Uno de los "programas" es mi CV, donde he
-                presentado parte de mi trayectoria profesional; en Documentos,
-                se puede visualizar y descargar una versión en PDF de mi
-                currículum, lo que facilita que tengan una copia física o
-                digital de mi experiencia y habilidades. Otra sección es la
-                carpeta de imágenes, donde he recopilado imagenes de varias de
-                las tecnologías que domino, brindando una vista rápida de mis
-                capacidades técnicas. Además se puede encontrar en el escritorio
-                un icono para contactarme.
+                {t(
+                  'about_portfolio_content.sections.desktop_experience.paragraphs.2'
+                )}
               </p>
               <p>
-                He querido ofrecer también la posibilidad de personalizar la
-                experiencia, incluyendo opciones de configuración que permiten
-                cambiar el fondo de pantalla, modificar el esquema de colores
-                para adaptarse a diferentes preferencias visuales, seleccionar
-                el idioma de navegación y agregar o quitar widgets del
-                escritorio (Por el momento solo el clima pero ire aregando
-                nuevos).
+                {t(
+                  'about_portfolio_content.sections.desktop_experience.paragraphs.3'
+                )}
               </p>
             </DesktopTextContainer>
           </div>
@@ -327,7 +306,7 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
         <Section
           id="section-2"
           ref={sectionsRefs[2]}
-          title="Experiencia Móvil"
+          title={t('about_portfolio_content.sections.mobile_experience.title')}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -350,22 +329,14 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
             ></video>
             <MobileTextContainer>
               <p>
-                Cuando pensé en cómo adaptar esta experiencia a dispositivos
-                móviles, me di cuenta de que necesitaba un enfoque que
-                mantuviera el concepto central de interacción, pero que también
-                respetara las limitaciones y oportunidades de las pantallas más
-                pequeñas. Así, en la versión mobile, trasladé el concepto de la
-                computadora a una emulación de la interfaz de un celular. Esto
-                no solo preserva la idea de interactividad, sino que también
-                garantiza que el portfolio sea accesible y usable en cualquier
-                dispositivo, lo que es crucial en un mundo donde el tráfico
-                móvil sigue creciendo.
+                {t(
+                  'about_portfolio_content.sections.mobile_experience.paragraphs.1'
+                )}
               </p>
               <p>
-                La versión mobile ofrece una navegación sencilla y mantiene las
-                opciones de personalización, asegurando que los usuarios tengan
-                una experiencia tan rica y ajustada a sus preferencias como en
-                la versión desktop.
+                {t(
+                  'about_portfolio_content.sections.mobile_experience.paragraphs.2'
+                )}
               </p>
             </MobileTextContainer>
           </MobileSectionContent>
@@ -374,7 +345,7 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
         <Section
           id="section-3"
           ref={sectionsRefs[3]}
-          title="Conclusión"
+          title={t('about_portfolio_content.sections.conclusion.title')}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -382,21 +353,14 @@ const AboutPortfolioContent: React.FC<MainContentProps> = ({
           }}
         >
           <ConclusionSectionContent isLarge={isLarge}>
-            A través de este portafolio, no solo he querido mostrar lo que sé
-            hacer, sino también cómo lo hago, destacando mi enfoque en la
-            experiencia del usuario, la adaptabilidad, y la capacidad de
-            transformar ideas en productos digitales que son tanto funcionales
-            como visualmente atractivos. Este proyecto es una culminación de mi
-            pasión por la tecnología y la innovación, y refleja mi compromiso
-            con la creación de experiencias digitales que sean tanto prácticas
-            como emocionantes.
+            {t('about_portfolio_content.sections.conclusion.paragraphs.1')}
           </ConclusionSectionContent>
         </Section>
 
         <Section
           id="section-4"
           ref={sectionsRefs[4]}
-          title="Tecnologías"
+          title={t('about_portfolio_content.sections.technologies.title')}
           style={{
             display: 'flex',
             alignItems: 'center',

@@ -44,19 +44,19 @@ const SidebarHeader = styled.div`
 interface SidebarProps {
   currentSection: number;
   handleScrollTo: (index: number) => void;
+  sections: string[];
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
   currentSection,
   handleScrollTo,
+  sections,
 }) => {
-  const sections = [
-    'Presentación',
-    'Experiencia laboral',
-    'Habilidades técnicas',
-    'Idiomas',
-    'Educación superior',
-  ];
+  //REFACTOR -> REPEAT
+  function capitalizeString(str: string) {
+    if (!str) return str;
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  }
 
   return (
     <SidebarContainer>
@@ -68,7 +68,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           onClick={() => handleScrollTo(index)}
         >
           <CodeIcon fontSize="small" />
-          <span style={{ marginLeft: '3px' }}>{section}</span>
+          <span style={{ marginLeft: '3px' }}>{capitalizeString(section)}</span>
         </SidebarItem>
       ))}
     </SidebarContainer>

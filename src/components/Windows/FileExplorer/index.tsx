@@ -19,6 +19,7 @@ import './styles.css';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import FilesList from '../../FilesList';
+import { useTranslation } from 'react-i18next';
 
 interface BaseWindowProps {
   handleWindow: (event: string, windowName: string, data: any) => void;
@@ -79,6 +80,8 @@ const FileIcon = styled.div`
 `;
 
 export default function FileExplorerWindow(props: FileExplorerWindow) {
+  const { t } = useTranslation();
+
   const imagesFiles = useAppSelector(selectImagesFiles);
   const documentsFiles = useAppSelector(selectDocumentsFiles);
 
@@ -135,7 +138,7 @@ export default function FileExplorerWindow(props: FileExplorerWindow) {
           )}
         </Container>
         <div style={{ width: '100%' }}>
-          <p>Details</p>
+          <p>{t('details')}</p>
           <FileIcon>
             <img
               src={imagesFiles[imageViewer.fileIndex].path}
