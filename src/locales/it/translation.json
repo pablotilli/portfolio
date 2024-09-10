@@ -22,6 +22,21 @@
   "email_field_is_required": "L'email è obbligatoria",
   "subject_field_is_required": "L'oggetto è obbligatorio",
   "invalid_email": "Email non valida",
+  "intro_content": {
+    "paragraphs": {
+      "1": "Ciao! Mi chiamo Pablo Tilli",
+      "2": "Sono uno sviluppatore web fullstack con oltre 20 anni di esperienza.",
+      "3": "Mi dedico a creare soluzioni web efficaci e attraenti, e in questo portfolio cerco di riflettere la mia passione e dedizione per ciò che faccio.",
+      "4": "Accendi la luce e",
+      "5": "Spero che ti piaccia!",
+      "6": "Spero che ti stia divertendo esplorando il mio portfolio!",
+      "7": "Se vuoi scoprire di più, puoi tornare a",
+      "8": "accedere",
+      "9": "accendi la luce per continuare.",
+      "10": "Accendi la luce",
+      "11": "e"
+    }
+  },
 
   "cv_content": {
     "sections": {

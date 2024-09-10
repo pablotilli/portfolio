@@ -22,6 +22,21 @@
   "email_field_is_required": "Email is required",
   "subject_field_is_required": "Subject is required",
   "invalid_email": "Invalid email",
+  "intro_content": {
+    "paragraphs": {
+      "1": "Hello! My name is Pablo Tilli",
+      "2": "I am a fullstack web developer with over 20 years of experience.",
+      "3": "I am dedicated to creating effective and attractive web solutions, and in this portfolio, I try to reflect my passion and dedication for what I do.",
+      "4": "Turn on the light and",
+      "5": "I hope you enjoy it!",
+      "6": "I hope you are enjoying exploring my portfolio!",
+      "7": "If you want to keep discovering more, you can go back to",
+      "8": "log in",
+      "9": "turn on the light to continue.",
+      "10": "Turn on the light",
+      "11": "and"
+    }
+  },
 
   "cv_content": {
     "sections": {

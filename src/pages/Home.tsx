@@ -15,6 +15,8 @@ import Typewriter from 'react-ts-typewriter';
 import { useAppDispatch, useAppSelector } from '../hooks/reduxHooks';
 import { handleLight } from '../redux/features/global/globalSlice';
 
+import { useTranslation } from 'react-i18next';
+
 import {
   selectIsLogged,
   selectIsMobile,
@@ -24,6 +26,8 @@ import {
 import Cube, { CameraAnimation } from '../components/Cube';
 
 const Home = () => {
+  const { t } = useTranslation();
+
   const isMobile = useAppSelector(selectIsMobile);
   const animateIntro = useAppSelector(selectAnimateIntro);
   const isLogged = useAppSelector(selectIsLogged);
@@ -71,7 +75,7 @@ const Home = () => {
             {typeWriterLine === 0 ? (
               <p style={{ marginBottom: '25px' }}>
                 <Typewriter
-                  text="¡Hola! Mi nombre es Pablo Tili"
+                  text={t('intro_content.paragraphs.1')}
                   cursor={typeWriterLine === 0}
                   onFinished={() => {
                     setTypeWriterLine(1);
@@ -81,13 +85,13 @@ const Home = () => {
               </p>
             ) : (
               <p style={{ marginBottom: '25px' }}>
-                ¡Hola! Mi nombre es Pablo Tilli
+                {t('intro_content.paragraphs.1')}
               </p>
             )}
             {typeWriterLine === 1 ? (
               <p style={{ marginBottom: '10px' }}>
                 <Typewriter
-                  text="Soy desarrollador web fullstack con más de 20 años de experiencia."
+                  text={t('intro_content.paragraphs.2')}
                   onFinished={() => {
                     setTypeWriterLine(2);
                   }}
@@ -97,8 +101,7 @@ const Home = () => {
             ) : (
               typeWriterLine >= 1 && (
                 <p style={{ marginBottom: '10px' }}>
-                  Soy desarrollador web fullstack con más de 20 años de
-                  experiencia.
+                  {t('intro_content.paragraphs.2')}
                 </p>
               )
             )}
@@ -106,7 +109,7 @@ const Home = () => {
             {typeWriterLine === 2 ? (
               <p style={{ marginBottom: '10px' }}>
                 <Typewriter
-                  text="Me dedico a crear soluciones web efectivas y atractivas, y en este portfolio intento reflejar mi pasión y dedicación por lo que hago."
+                  text={t('intro_content.paragraphs.3')}
                   onFinished={() => {
                     setTypeWriterLine(3);
                   }}
@@ -116,9 +119,7 @@ const Home = () => {
             ) : (
               typeWriterLine >= 2 && (
                 <p style={{ marginBottom: '10px' }}>
-                  Me dedico a crear soluciones web efectivas y atractivas, y en
-                  este portfolio intento reflejar mi pasión y dedicación por lo
-                  que hago.
+                  {t('intro_content.paragraphs.3')}
                 </p>
               )
             )}
@@ -127,8 +128,8 @@ const Home = () => {
               <p style={{ marginBottom: '10px' }}>
                 <Typewriter
                   text={`${
-                    isMobile ? '' : 'Enciende la luz y'
-                  } ¡Espero que lo disfrutes!`}
+                    isMobile ? '' : t('intro_content.paragraphs.4')
+                  }  ${t('intro_content.paragraphs.5')}`}
                   onFinished={() => {
                     setTypeWriterFinished(true);
                   }}
@@ -147,12 +148,12 @@ const Home = () => {
                           className="turn-on-light-text"
                           style={{ color: 'yellow' }}
                         >
-                          Enciende la luz{' '}
+                          {t('intro_content.paragraphs.10')}{' '}
                         </span>
-                        y{' '}
+                        {t('intro_content.paragraphs.11')}{' '}
                       </>
                     )}
-                    ¡Espero que lo disfrutes!
+                    {t('intro_content.paragraphs.5')}
                   </>
                 </p>
               )
@@ -161,11 +162,15 @@ const Home = () => {
         ) : (
           <>
             <p className="fadein-1" style={{ marginBottom: '25px' }}>
-              ¡Espero que estés disfrutando explorando mi portfolio!
+              {t('intro_content.paragraphs.6')}
             </p>
             <p className="fadein-2" style={{ marginBottom: '10px' }}>
-              Si quieres seguir descubriendo más, puedes volver a{' '}
-              {`${isMobile ? 'ingresar' : 'encender la luz para continuar.'}`}
+              {t('intro_content.paragraphs.7')}{' '}
+              {`${
+                isMobile
+                  ? t('intro_content.paragraphs.8')
+                  : t('intro_content.paragraphs.9')
+              }`}
             </p>
           </>
         )}
