@@ -372,7 +372,7 @@ export default function Mobile() {
           transparent={
             !(hasOpenedScreen() && location.pathname !== '/ScreenManager')
           }
-          className={`mobile-content ${!isLogged ? 'with-border-radius' : ''}`}
+          className={`mobile-content ${isLogged ? 'with-border-radius' : ''}`}
         >
           {!isLogged && !lightOn ? (
             <Home />

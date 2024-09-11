@@ -32,7 +32,29 @@ const PdfViewerContainer = styled.div`
   z-index: 10;
   width: 100%;
   height: calc(100% - 20px);
-  background-color: red;
+  background-color: ${({ theme }) => theme.mainBackgroundColor};
+`;
+
+const DownloadButton = styled.a`
+  border: 1px solid ${({ theme }) => theme.secondaryBackgroundColor};
+  padding: 10px;
+  border-radius: 15px;
+  color: ${({ theme }) => theme.mainTextColor};
+  text-decoration: none;
+`;
+
+const CloseButton = styled.button`
+  border: 1px solid ${({ theme }) => theme.mainBackgroundColor};
+  padding: 3px;
+  border-radius: 15px;
+  color: ${({ theme }) => theme.mainTextColor};
+  background-color: ${({ theme }) => theme.secondaryBackgroundColor};
+  position: absolute;
+  z-index: 2;
+  width: 60px;
+  left: calc(50% - 30px);
+  top: 10px;
+  font-size: 1rem;
 `;
 
 export default function ImageViewerWindow() {
@@ -49,18 +71,7 @@ export default function ImageViewerWindow() {
     <>
       {selectedFileImage.viewerType === 'image' && (
         <ImageViewerContainer>
-          <button
-            style={{
-              position: 'absolute',
-              zIndex: 2,
-              width: '50px',
-              left: 'calc(50% - 25px)',
-              top: '10px',
-            }}
-            onClick={handleCloseImageViewer}
-          >
-            X
-          </button>
+          <CloseButton onClick={handleCloseImageViewer}>x</CloseButton>
           <Swiper
             spaceBetween={50}
             slidesPerView={1}
@@ -95,14 +106,9 @@ export default function ImageViewerWindow() {
         <PdfViewerContainer>
           <>
             <div style={{ height: '20px' }}>
-              <button onClick={handleCloseImageViewer}>X</button>
+              <CloseButton onClick={handleCloseImageViewer}>x</CloseButton>
             </div>
-            {/*             <embed
-              src="/documents/cv_pablo_tilli.pdf"
-              type="application/pdf"
-              width="100%"
-              height="100%"
-            /> */}
+
             <object
               data="/documents/cv_pablo_tilli.pdf"
               type="application/pdf"
@@ -114,7 +120,9 @@ export default function ImageViewerWindow() {
                 alignItems: 'center',
               }}
             >
-              <a href="/documents/cv_pablo_tilli.pdf">Download</a>.
+              <DownloadButton href="/documents/cv_pablo_tilli.pdf">
+                Download
+              </DownloadButton>
             </object>
           </>
         </PdfViewerContainer>

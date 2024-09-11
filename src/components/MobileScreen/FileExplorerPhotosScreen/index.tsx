@@ -5,7 +5,7 @@ import { selectImagesFiles } from '../../../redux/features/global/globalSelector
 import FilesList from '../../FilesList';
 
 const Container = styled.div`
-  background-color: #2f2f2f;
+  background-color: ${({ theme }) => theme.mainBackgroundColor};
 
   overflow-y: auto;
 
