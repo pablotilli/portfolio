@@ -64,6 +64,7 @@ import FileExplorerPhotosScreen from '../MobileScreen/FileExplorerPhotosScreen';
 import ContactFormScreen from '../MobileScreen/ContactFormScreen';
 import AppearencePreferencesScreen from '../MobileScreen/AppearencePreferencesScreen';
 import AboutPortfolioScreen from '../MobileScreen/AboutPortfolioScreen';
+import FileExplorerDocumentsScreen from '../MobileScreen/FileExplorerDocumentsScreen';
 
 const SystemNavigationbar = styled.div`
   /*     background-color: red; */
@@ -532,6 +533,10 @@ export default function Mobile() {
                   <Route
                     path="/FileExplorerPhotos"
                     element={<FileExplorerPhotosScreen />}
+                  />
+                  <Route
+                    path="/FileExplorerDocuments"
+                    element={<FileExplorerDocumentsScreen />}
                   />
                   <Route
                     path="/screenManager"

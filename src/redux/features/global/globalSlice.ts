@@ -112,6 +112,7 @@ const globalSlice = createSlice({
         viewerType?: 'pdf' | 'image';
       }>
     ) => {
+      console.log('PAYLOAD', action.payload);
       state.imageViewer = action.payload;
     },
   },

@@ -97,11 +97,25 @@ export default function ImageViewerWindow() {
             <div style={{ height: '20px' }}>
               <button onClick={handleCloseImageViewer}>X</button>
             </div>
-            <iframe
+            {/*             <embed
               src="/documents/cv_pablo_tilli.pdf"
+              type="application/pdf"
               width="100%"
               height="100%"
-            />
+            /> */}
+            <object
+              data="/documents/cv_pablo_tilli.pdf"
+              type="application/pdf"
+              width="100%"
+              height="100%"
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <a href="/documents/cv_pablo_tilli.pdf">Download</a>.
+            </object>
           </>
         </PdfViewerContainer>
       )}
