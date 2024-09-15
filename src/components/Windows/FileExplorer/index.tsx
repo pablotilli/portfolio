@@ -32,7 +32,6 @@ interface BaseWindowProps {
   handleActiveWindow: (activeWindowName: string) => void;
   isActiveWindow: boolean;
   visible: boolean;
-
 }
 
 interface FileExplorerWindow extends BaseWindowProps {
@@ -40,7 +39,7 @@ interface FileExplorerWindow extends BaseWindowProps {
 }
 
 const Container = styled.div`
-  background-color: ${({ theme }) => theme.titleBarBackgroundColor};
+  background-color: ${({ theme }) => theme.mainBackgroundColor};
   color: ${({ theme }) => theme.mainTextColor};
 
   overflow-y: auto;

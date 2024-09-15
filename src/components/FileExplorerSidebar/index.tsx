@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
 const MainContainer = styled.div`
-  background-color: ${({ theme }) => theme.mainBackgroundColor};
+  background-color: ${({ theme }) => theme.secondaryBackgroundColor};
   color: ${({ theme }) => theme.mainTextColor};
 
   width: 100% !important;

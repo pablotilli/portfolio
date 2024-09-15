@@ -21,11 +21,12 @@ export const ButtonsContainer = styled.div`
   gap: 8px;
 `;
 
-export const Title = styled.div`
+export const Title = styled.div<{ active: boolean }>`
   flex-grow: 1;
   text-align: center;
   font-size: 14px;
-  color: #333;
+  color: ${({ active, theme }) =>
+    active ? theme.titleBarActiveTextColor : theme.titleBarTextColor};
   user-select: none;
   -webkit-app-region: no-drag;
 `;

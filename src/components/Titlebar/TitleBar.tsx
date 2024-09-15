@@ -26,7 +26,7 @@ const Titlebar = ({
         <Button className="minimize" onClick={onMinimize}></Button>
         <Button className="maximize" onClick={onRestore}></Button>
       </ButtonsContainer>
-      <Title>{title}</Title>
+      <Title active={active}>{title}</Title>
     </StyledTitlebar>
   );
 };
