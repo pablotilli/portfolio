@@ -112,7 +112,7 @@ export default function FileExplorerWindow(props: FileExplorerWindow) {
   const imageViewer = useAppSelector(selectImageViewer);
 
   return (
-    <BaseWindow {...props} title="File Explorer">
+    <BaseWindow {...props} title={t('fileExplorer')}>
       <SplitPane
         split="vertical"
         minSize={[100, 300, 150]}

@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import AboutPortfolioNavbar from './AboutPortfolioNavbar';
 import NavBarComponent from './NavBarComponent';
 import WebSite from './Website';
+import { useTranslation } from 'react-i18next';
 
 interface BaseWindowProps {
   handleWindow: (event: string, windowName: string, data: any) => void; // Ajusta el tipo según sea necesario
@@ -20,7 +21,6 @@ interface BaseWindowProps {
   handleActiveWindow: (activeWindowName: string) => void; // Ajusta el tipo según sea necesario
   isActiveWindow: boolean;
   visible: boolean;
- 
 }
 
 const Container = styled.div`
@@ -31,6 +31,8 @@ const Container = styled.div`
 `;
 
 export default function AboutPorfolio(props: BaseWindowProps) {
+  const { t } = useTranslation();
+
   const sectionsRefs = [
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -91,7 +93,7 @@ export default function AboutPorfolio(props: BaseWindowProps) {
   };
 
   return (
-    <BaseWindow {...props} title="Acerca del proyecto">
+    <BaseWindow {...props} title={t('about_this_proyect')}>
       <Container>
         <AboutPortfolioNavbar
           currentSection={currentSection}

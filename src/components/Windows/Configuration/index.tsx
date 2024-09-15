@@ -10,6 +10,7 @@ import WallpaperPerferences from './WallpaperPreferences';
 import AppearencePreferences from './AppearencePreferences';
 import LanguagePreferences from './LanguagePreferences';
 import WidgetsPreferences from './WidgetsPreferences';
+import { useTranslation } from 'react-i18next';
 
 interface BaseWindowProps {
   handleWindow: (event: string, windowName: string, data: any) => void; // Ajusta el tipo según sea necesario
@@ -25,8 +26,10 @@ interface BaseWindowProps {
 }
 
 export default function ConfigurationWindow(props: BaseWindowProps) {
+  const { t } = useTranslation();
+
   return (
-    <BaseWindow {...props} title="Configuration">
+    <BaseWindow {...props} title={t('preferences')}>
       <SplitPane
         split="vertical"
         minSize={[100, 300]}

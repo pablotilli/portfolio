@@ -85,7 +85,6 @@ interface BaseWindowProps {
   handleActiveWindow: (activeWindowName: string) => void;
   isActiveWindow: boolean;
   visible: boolean;
-
 }
 
 export default function CvWindow(props: BaseWindowProps) {
@@ -161,7 +160,7 @@ export default function CvWindow(props: BaseWindowProps) {
   }
 
   return (
-    <BaseWindow {...props} title="CV">
+    <BaseWindow {...props} title={t('CV')}>
       <div style={{ display: 'flex', height: '100%', width: '100%' }}>
         <ActivityBar>
           <span>

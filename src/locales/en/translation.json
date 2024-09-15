@@ -4,6 +4,7 @@
   "about_this_proyect": "About This Project",
   "documents": "Documents",
   "images": "Images",
+  "fileExplorer": "File explorer",
   "preferences": "Preferences",
   "wallpaper": "Wallpaper",
   "appearence": "Appearance",
@@ -23,7 +24,7 @@
   "subject_field_is_required": "Subject is required",
   "invalid_email": "Invalid email",
   "loading": "loading",
-  "signIn":"Sign in",
+  "signIn": "Sign in",
   "intro_content": {
     "paragraphs": {
       "1": "Hello! My name is Pablo Tilli",

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import ContactForm from '../../ContactForm';
 import '../../Desktop/styles.css';
 
@@ -16,8 +17,10 @@ interface BaseWindowProps {
 }
 
 export default function ContactWindow(props: BaseWindowProps) {
+  const { t } = useTranslation();
+
   return (
-    <BaseWindow {...props} title="Contact">
+    <BaseWindow {...props} title={t('contact')}>
       <ContactForm />
     </BaseWindow>
   );
