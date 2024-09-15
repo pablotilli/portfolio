@@ -3,6 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 interface WeatherData {
   name: string;
@@ -54,6 +55,8 @@ const WeatherWidget = ({
 }: {
   version?: 'mobile' | 'desktop';
 }) => {
+  const { t } = useTranslation();
+
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
@@ -105,7 +108,9 @@ const WeatherWidget = ({
             width: '100%',
           }}
         >
-          <p style={{ textAlign: 'center', fontSize: '1rem' }}>Cargando...</p>
+          <p style={{ textAlign: 'center', fontSize: '1rem' }}>
+            {t('loading')}...
+          </p>
         </div>
       ) : error ? (
         <p>{error}</p>

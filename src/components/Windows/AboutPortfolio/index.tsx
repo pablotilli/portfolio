@@ -20,6 +20,7 @@ interface BaseWindowProps {
   handleActiveWindow: (activeWindowName: string) => void; // Ajusta el tipo según sea necesario
   isActiveWindow: boolean;
   visible: boolean;
+ 
 }
 
 const Container = styled.div`
@@ -90,7 +91,7 @@ export default function AboutPorfolio(props: BaseWindowProps) {
   };
 
   return (
-    <BaseWindow {...props}>
+    <BaseWindow {...props} title="Acerca del proyecto">
       <Container>
         <AboutPortfolioNavbar
           currentSection={currentSection}

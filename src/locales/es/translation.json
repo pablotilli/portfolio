@@ -22,6 +22,8 @@
   "email_field_is_required": "El email es obligatorio",
   "subject_field_is_required": "El asunto es obligatorio",
   "invalid_email": "El Email no es valido",
+  "loading": "Cargando",
+  "signIn": "Iniciar sesión",
   "intro_content": {
     "paragraphs": {
       "1": "¡Hola! Mi nombre es Pablo Tilli",

@@ -16,12 +16,15 @@ import { handleLight } from '../../redux/features/global/globalSlice';
 import { selectIsMobile } from '../../redux/features/global/globalSelectors';
 
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 interface LoginProps {
   handleLogin: () => void;
 }
 
 export default function Login({ handleLogin }: LoginProps) {
+  const { t } = useTranslation();
+
   const dispatch = useAppDispatch();
 
   const isMobile = useAppSelector(selectIsMobile);
@@ -125,7 +128,12 @@ export default function Login({ handleLogin }: LoginProps) {
       style={{ height: '100%', width: '100%' }}
     >
       <MainContainer>
-        {!isMobile && <IndicatorsBar>Bateria - WI-FI</IndicatorsBar>}
+        {!isMobile && (
+          <IndicatorsBar>
+            <img className="battery-indicator" src="/images/battery.png" />
+            <img src="/images/wifi.png" />
+          </IndicatorsBar>
+        )}
         <DateWidget>
           <div className="date">{formattedDate}</div>
           <div className="time">{formattedTime}</div>
@@ -156,7 +164,7 @@ export default function Login({ handleLogin }: LoginProps) {
             </>
           ) : (
             <LoginButton onClick={() => dispatch(handleLogin)}>
-              Sign in
+              {t('signIn')}
             </LoginButton>
           )}
         </AvatarWidget>

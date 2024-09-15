@@ -1,9 +1,7 @@
 import { forwardRef, RefObject, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import SchoolIcon from '@material-ui/icons/School';
 import WorkIcon from '@material-ui/icons/Work';
-import StarIcon from '@material-ui/icons/Star';
 
 import {
   VerticalTimeline,

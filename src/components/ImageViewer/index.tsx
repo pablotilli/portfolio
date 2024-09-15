@@ -53,7 +53,7 @@ const CloseButton = styled.button`
   z-index: 2;
   width: 60px;
   left: calc(50% - 30px);
-  top: 10px;
+  top: 2px;
   font-size: 1rem;
 `;
 

@@ -18,6 +18,7 @@ interface BaseWindowProps {
   handleActiveWindow: (activeWindowName: string) => void;
   isActiveWindow: boolean;
   visible: boolean;
+  title: string;
 }
 
 export default function BaseWindow({
@@ -31,6 +32,7 @@ export default function BaseWindow({
   handleActiveWindow,
   isActiveWindow = false,
   visible,
+  title,
 }: BaseWindowProps) {
   const windowStates = {
     MINIMIZED: 'MINIMIZED',
@@ -237,6 +239,7 @@ export default function BaseWindow({
           onRestore={handleRestore}
           onClose={handleClose}
           active={isActiveWindow}
+          title={title}
         />
         {children}
       </div>

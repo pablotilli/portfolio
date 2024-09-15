@@ -32,6 +32,7 @@ interface BaseWindowProps {
   handleActiveWindow: (activeWindowName: string) => void;
   isActiveWindow: boolean;
   visible: boolean;
+
 }
 
 interface FileExplorerWindow extends BaseWindowProps {
@@ -112,7 +113,7 @@ export default function FileExplorerWindow(props: FileExplorerWindow) {
   const imageViewer = useAppSelector(selectImageViewer);
 
   return (
-    <BaseWindow {...props}>
+    <BaseWindow {...props} title="File Explorer">
       <SplitPane
         split="vertical"
         minSize={[100, 300, 150]}

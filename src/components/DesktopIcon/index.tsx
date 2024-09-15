@@ -61,8 +61,10 @@ export default function DesktopIcon({
           <DesktopIconImage src={appData.icon.image} alt="" />
         </div>
         <div
-          style={{ fontSize: `${size === 'desktop' ? '1rem' : '0.8rem'}` }}
-          className="desktop-icon-text"
+          style={{
+            fontSize: `${size === 'desktop' ? '1rem' : '0.8rem'}`,
+            textAlign: 'center',
+          }}
         >
           {t(appData.name)}
         </div>

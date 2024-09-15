@@ -65,14 +65,16 @@ export const AvatarImage = styled.div`
 `;
 
 export const LoginButton = styled.button`
-  background-color: transparent;
+  background-color: #cbcbcb29;
   border: 1px solid gray;
   margin-top: 30px;
-  padding: 10px 5px;
+  padding: 10px;
   border-radius: 5px;
+  color: #ffffffbd;
+  font-size: 0.9rem;
 
   &:hover {
-    background-color: #ffffff1a;
+    background-color: #cbcbcb40;
   }
 `;
 
@@ -81,5 +83,17 @@ export const IndicatorsBar = styled.div`
 
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding: 5px 15px;
+
+  img {
+    width: 20px;
+    object-fit: contain;
+    margin: 0 5px;
+  }
+
+  & .battery-indicator {
+    width: auto;
+    height: 12px;
+  }
 `;

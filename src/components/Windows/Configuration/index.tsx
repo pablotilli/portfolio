@@ -26,7 +26,7 @@ interface BaseWindowProps {
 
 export default function ConfigurationWindow(props: BaseWindowProps) {
   return (
-    <BaseWindow {...props}>
+    <BaseWindow {...props} title="Configuration">
       <SplitPane
         split="vertical"
         minSize={[100, 300]}

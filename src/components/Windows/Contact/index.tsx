@@ -17,7 +17,7 @@ interface BaseWindowProps {
 
 export default function ContactWindow(props: BaseWindowProps) {
   return (
-    <BaseWindow {...props}>
+    <BaseWindow {...props} title="Contact">
       <ContactForm />
     </BaseWindow>
   );
