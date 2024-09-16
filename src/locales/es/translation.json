@@ -25,6 +25,8 @@
   "invalid_email": "El Email no es valido",
   "loading": "Cargando",
   "signIn": "Iniciar sesión",
+  "logout": "Cerrar sesión",
+  "select_language": "Seleccionar idioma",
   "intro_content": {
     "paragraphs": {
       "1": "¡Hola! Mi nombre es Pablo Tilli",

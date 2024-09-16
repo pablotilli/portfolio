@@ -25,6 +25,8 @@
   "invalid_email": "Invalid email",
   "loading": "loading",
   "signIn": "Sign in",
+  "logout": "Logout",
+  "select_language": "Select language",
   "intro_content": {
     "paragraphs": {
       "1": "Hello! My name is Pablo Tilli",

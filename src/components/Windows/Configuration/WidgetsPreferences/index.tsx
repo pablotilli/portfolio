@@ -6,6 +6,22 @@ import Switch from '../../../Switch';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
+const Container = styled.div`
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  h1 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 15px;
+    margin-left: 10px;
+
+    color: ${({ theme }) => theme.mainTextColor};
+  }
+`;
+
 const WidgetSwitcher = styled.div`
   border: 1px solid gray;
   padding: 7px;
@@ -40,7 +56,8 @@ export default function WidgetsPreferences() {
   };
 
   return (
-    <div>
+    <Container>
+      <h1>{t('widgets')}</h1>
       <WidgetSwitcher>
         <span>{t('weather')}</span>
         <div>
@@ -49,6 +66,6 @@ export default function WidgetsPreferences() {
           <Switch checked={isChecked} onChange={handleSwitchChange} />
         </div>
       </WidgetSwitcher>
-    </div>
+    </Container>
   );
 }

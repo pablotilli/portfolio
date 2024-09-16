@@ -5,6 +5,23 @@ import styled from 'styled-components';
 import ThemeSelector from './ThemeSelector';
 
 import * as themes from './../../../../themes/themes';
+import { useTranslation } from 'react-i18next';
+
+const Container = styled.div`
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  h1 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 15px;
+    margin-left: 10px;
+
+    color: ${({ theme }) => theme.mainTextColor};
+  }
+`;
 
 const ThemesContainer = styled.div`
   display: grid;
@@ -17,6 +34,8 @@ const ThemesContainer = styled.div`
 `;
 
 export default function AppearencePreferences() {
+  const { t } = useTranslation();
+
   const dispatch = useAppDispatch();
 
   const changeTheme = (themeName: string) => {
@@ -26,15 +45,18 @@ export default function AppearencePreferences() {
   type ThemeName = keyof typeof themes;
 
   return (
-    <ThemesContainer>
-      {Object.keys(themes).map((themeName) => (
-        <ThemeSelector
-          onClick={() => {
-            changeTheme(themeName);
-          }}
-          tema={themes[themeName as ThemeName]}
-        />
-      ))}
-    </ThemesContainer>
+    <Container>
+      <h1>{t('preferences')}</h1>
+      <ThemesContainer>
+        {Object.keys(themes).map((themeName) => (
+          <ThemeSelector
+            onClick={() => {
+              changeTheme(themeName);
+            }}
+            tema={themes[themeName as ThemeName]}
+          />
+        ))}
+      </ThemesContainer>
+    </Container>
   );
 }

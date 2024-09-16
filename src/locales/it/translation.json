@@ -25,6 +25,8 @@
   "invalid_email": "Email non valida",
   "loading": "Caricando",
   "signIn": "Accedi",
+  "logout": "Disconnettersi",
+  "select_language": "Selezionare lingua",
   "intro_content": {
     "paragraphs": {
       "1": "Ciao! Mi chiamo Pablo Tilli",

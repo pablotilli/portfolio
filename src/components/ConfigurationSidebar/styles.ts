@@ -16,8 +16,8 @@ export const SidebarContainer = styled.div`
       align-items: center;
 
       img {
-        height: 30px;
-        margin-right: 6px;
+        height: 25px;
+        margin-right: 11px;
         aspect-ratio: 1 / 1;
       }
 

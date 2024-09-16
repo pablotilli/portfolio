@@ -29,13 +29,12 @@ const RadioLabel = styled.label<RadioLabelProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*  justify-content: center; */
   cursor: pointer;
   position: relative;
-  padding: 5px;
-  border: 3px solid
+  padding: 10px;
+  border: 1px solid
     ${({ isChecked, theme }) =>
-      isChecked ? theme.titleBarBackgroundColor : 'transparent'};
+      isChecked ? theme.titleBarTextColor : 'transparent'};
   border-radius: 8px;
   transition: background-color 0.3s, border-color 0.3s;
 

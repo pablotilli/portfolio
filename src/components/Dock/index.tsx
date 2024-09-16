@@ -1,5 +1,6 @@
 import { useRef, MouseEvent } from 'react';
 import './styles.css';
+import { useTranslation } from 'react-i18next';
 
 interface DockProps {
   onIconClick: (data: { name: string; iconRef: HTMLLIElement | null }) => void;
@@ -26,6 +27,8 @@ const Dock = ({
     const capped = Math.min(from[1], Math.max(from[0], value)) - from[0];
     return Math.floor(capped * scale + to[0]);
   };
+
+  const { t } = useTranslation();
 
   const maxAdditionalSize = 5;
 
@@ -92,7 +95,7 @@ const Dock = ({
               ref={icon.dockRef}
             >
               <img src={icon.image} />
-              <span className="tooltip">Arc Browser</span>
+              <span className="tooltip">{t(name)}</span>
 
               {activeWindowTarget === target &&
               activeWindowName != 'Configuration' ? (
@@ -117,7 +120,7 @@ const Dock = ({
           ref={logoutIconRef}
         >
           <img src="/images/config_icon.png" />
-          <span className="tooltip">Configuration</span>
+          <span className="tooltip">{t('preferences')}</span>
           {activeWindowTarget === 'Configuration' && (
             <div className="dock-app-is-active-icon" />
           )}
@@ -135,7 +138,7 @@ const Dock = ({
           ref={logoutIconRef}
         >
           <img src="/images/logout_dock_icon.png" />
-          <span className="tooltip">Logout</span>
+          <span className="tooltip">{t('logout')}</span>
         </li>
       </ul>
     </nav>
