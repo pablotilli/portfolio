@@ -43,6 +43,7 @@ export default function ConfigurationWindow(props: BaseWindowProps) {
           <Route path="/appearence" element={<AppearencePreferences />} />
           <Route path="/language" element={<LanguagePreferences />} />
           <Route path="/widgets" element={<WidgetsPreferences />} />
+          <Route path="*" element={<WallpaperPerferences />} />
         </Routes>
       </SplitPane>
     </BaseWindow>
