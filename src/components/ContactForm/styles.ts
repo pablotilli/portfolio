@@ -5,7 +5,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
 
-  padding: 20px 30px 15px 30px;
+  padding: 20px 30px 5px 30px;
 
   display: flex;
   flex-direction: column;
@@ -29,7 +29,6 @@ export const Container = styled.div`
     border-radius: 10px;
   }
 
-  /* Estilos para Firefox */
   scrollbar-width: thin;
   scrollbar-color: #3f3f3f #222222;
 
@@ -48,23 +47,40 @@ export const FieldsWrapper = styled.div`
 `;
 
 export const FormField = styled.div`
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+`;
+
+export const ErrorMessage = styled.div`
+  color: ${({ theme }) => theme.titleBarTextColor};
+  margin-top: 5px;
+  font-size: 0.8rem;
 `;
 
 export const Label = styled.label`
   display: block;
-  margin-bottom: 10px;
-  font-size: 1rem;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
   color: ${({ theme }) => theme.mainTextColor};
+`;
+
+export const FormFooter = styled.div`
+  display: flex;
+`;
+
+export const SendMessageAlert = styled.div`
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
 `;
 
 export const Input = styled.input`
   width: 100%;
   max-width: 300px;
-  padding: 10px 8px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: 5px 8px;
+  border: 1px solid ${({ theme }) => theme.titleBarBackgroundColor};
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 100;
   box-sizing: border-box;
   outline: none;
   transition: border-color 0.3s;
@@ -72,7 +88,12 @@ export const Input = styled.input`
   color: ${({ theme }) => theme.mainTextColor};
 
   &:focus {
-    border-color: #007aff;
+    border-color: ${({ theme }) => theme.titleBarActiveBackgroundColor};
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.titleBarBackgroundColor};
+    color: ${({ theme }) => theme.titleBarTextColor};
   }
 `;
 
@@ -80,9 +101,12 @@ export const TextArea = styled.textarea`
   width: 100%;
 
   padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
+  border: 1px solid ${({ theme }) => theme.titleBarBackgroundColor};
+  border-radius: 4px;
+
+  font-size: 0.9rem;
+  font-weight: 100;
+
   box-sizing: border-box;
   outline: none;
   transition: border-color 0.3s;
@@ -91,17 +115,18 @@ export const TextArea = styled.textarea`
   color: ${({ theme }) => theme.mainTextColor};
 
   &:focus {
-    border-color: #007aff;
+    border-color: ${({ theme }) => theme.titleBarActiveBackgroundColor};
   }
 `;
 
 export const Button = styled.button`
-  padding: 12px 20px;
-  font-size: 16px;
+  padding: 5px 10px;
+  font-size: 14px;
   color: ${({ theme }) => theme.mainTextColor};
   background-color: ${({ theme }) => theme.mainBackgroundColor};
-  border: 1px solid transparent;
-  border-radius: 8px;
+  border: 1px solid ${({ theme }) => theme.titleBarBackgroundColor};
+  border-radius: 4px;
+  margin-top: 5px;
   cursor: pointer;
   transition: all 0.3s;
   width: fit-content;
@@ -116,13 +141,26 @@ export const Button = styled.button`
     margin-right: 7px;
   }
 
-  &:hover {
+  &:not(:disabled):hover {
     opacity: 0.8;
     border: 1px solid ${({ theme }) => theme.titleBarActiveBackgroundColor};
   }
 
+  &:disabled:hover {
+    cursor: default;
+  }
+
   &:focus {
     outline: none;
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.titleBarBackgroundColor};
+    color: ${({ theme }) => theme.titleBarTextColor};
+
+    svg {
+      color: ${({ theme }) => theme.titleBarTextColor};
+    }
   }
 
   @media screen and (max-width: 900px) {
@@ -148,9 +186,9 @@ export const ImageColumn = styled.div`
   justify-content: center;
 
   img {
-    height: 150px;
+    height: 120px;
     scale: 1 / 1;
-    opacity: 0.7;
+    opacity: 0.6;
   }
 
   @media screen and (max-width: 600px) {

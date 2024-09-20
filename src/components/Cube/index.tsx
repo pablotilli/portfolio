@@ -288,13 +288,15 @@ function resetCubeGroup(
   cubeGroup: THREE.Group<THREE.Object3DEventMap>,
   rotationGroup: THREE.Group<THREE.Object3DEventMap>
 ) {
-  rotationGroup.children
-    .slice()
-    .reverse()
-    .forEach(function (c) {
-      cubeGroup.attach(c);
-    });
-  rotationGroup.quaternion.set(0, 0, 0, 1);
+  if (rotationGroup) {
+    rotationGroup.children
+      .slice()
+      .reverse()
+      .forEach(function (c) {
+        cubeGroup.attach(c);
+      });
+    rotationGroup.quaternion.set(0, 0, 0, 1);
+  }
 }
 
 function attachToRotationGroup(
@@ -303,15 +305,17 @@ function attachToRotationGroup(
   axis: 'x' | 'y' | 'z',
   limit: number
 ) {
-  cubeGroup.children
-    .slice()
-    .reverse()
-    .filter(function (c) {
-      return limit < 0 ? c.position[axis] < limit : c.position[axis] > limit;
-    })
-    .forEach(function (c) {
-      rotationGroup.attach(c);
-    });
+  if (cubeGroup) {
+    cubeGroup.children
+      .slice()
+      .reverse()
+      .filter(function (c) {
+        return limit < 0 ? c.position[axis] < limit : c.position[axis] > limit;
+      })
+      .forEach(function (c) {
+        rotationGroup.attach(c);
+      });
+  }
 }
 
 function animateRotationGroup(

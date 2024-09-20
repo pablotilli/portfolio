@@ -20,6 +20,7 @@
     "@types/redux": "^3.6.0",
     "@types/swiper": "^6.0.0",
     "@types/three": "^0.167.1",
+    "emailjs-com": "^3.2.0",
     "es-abstract": "^1.23.3",
     "formik": "^2.4.6",
     "framer-motion": "11.2.12",
