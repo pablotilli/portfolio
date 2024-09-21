@@ -323,15 +323,17 @@ function animateRotationGroup(
   axis: 'x' | 'y' | 'z',
   multiplier: number
 ) {
-  new TWEEN.Tween(rotationGroup.rotation)
-    .to(
-      {
-        [axis]: rotationGroup.rotation[axis] + (Math.PI / 2) * multiplier,
-      },
-      250
-    )
-    .easing(TWEEN.Easing.Cubic.InOut)
-    .start();
+  if (rotationGroup) {
+    new TWEEN.Tween(rotationGroup.rotation)
+      .to(
+        {
+          [axis]: rotationGroup.rotation[axis] + (Math.PI / 2) * multiplier,
+        },
+        250
+      )
+      .easing(TWEEN.Easing.Cubic.InOut)
+      .start();
+  }
 }
 
 function rotate(

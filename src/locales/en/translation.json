@@ -23,7 +23,7 @@
   "email_field_is_required": "Email is required",
   "subject_field_is_required": "Subject is required",
   "invalid_email": "Invalid email",
-  "loading": "loading",
+  "loading": "Loading",
   "signIn": "Sign in",
   "logout": "Logout",
   "select_language": "Select language",

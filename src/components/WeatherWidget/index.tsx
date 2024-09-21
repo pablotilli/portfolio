@@ -55,11 +55,13 @@ const WeatherWidget = ({
 }: {
   version?: 'mobile' | 'desktop';
 }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+
+  const activeLanguage = i18n.language;
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -79,7 +81,7 @@ const WeatherWidget = ({
               lat: latitude,
               lon: longitude,
               appid: '3d3b9b32aebc72e5e766753be6d6e4d5',
-              units: 'metric',
+              units: activeLanguage === 'en' ? 'imperial' : 'metric',
             },
           }
         );
@@ -94,7 +96,7 @@ const WeatherWidget = ({
     };
 
     fetchWeatherData();
-  }, []);
+  }, [i18n.language]);
 
   return (
     <WeatherInfo version={version}>
@@ -128,7 +130,10 @@ const WeatherWidget = ({
                 alt={weatherData.weather[0].description}
               />
 
-              <p>{weatherData.main.temp.toFixed(0)}°C</p>
+              <p>
+                {weatherData.main.temp.toFixed(0)}°
+                {activeLanguage === 'en' ? 'F' : 'C'}
+              </p>
             </div>
           </motion.div>
         </>
