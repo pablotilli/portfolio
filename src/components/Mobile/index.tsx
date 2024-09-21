@@ -450,7 +450,8 @@ export default function Mobile() {
                               /*  onTouchStart={handleTouchStart}
                               onTouchEndCapture={() => handleTouchEnd(app)} */
                             >
-                              <WeatherWidget version="mobile" />
+                              {widgets.find(({ name }) => name === 'weather')
+                                ?.visible && <WeatherWidget version="mobile" />}
                             </div>
 
                             {apps.map((app, index) => (
