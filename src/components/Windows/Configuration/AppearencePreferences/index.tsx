@@ -46,7 +46,7 @@ export default function AppearencePreferences() {
 
   return (
     <Container>
-      <h1>{t('preferences')}</h1>
+      <h1>{t('appearence')}</h1>
       <ThemesContainer>
         {Object.keys(themes).map((themeName) => (
           <ThemeSelector

@@ -59,7 +59,7 @@ const NavBarComponent: React.FC = () => {
     <NavBar>
       <NavButton>{'<'}</NavButton>
       <NavButton>{'>'}</NavButton>
-      <SearchInput type="text" placeholder="localhost:3000" />
+      <SearchInput type="text" placeholder="localhost:3000" disabled />
       <NavIcons>
         <IconWrapper>⭐</IconWrapper>
       </NavIcons>

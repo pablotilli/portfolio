@@ -48,6 +48,7 @@ export default function DesktopIcon({
     <Rnd
       onClick={() => canClick && handleClick(appData)}
       onDrag={() => setCanClick(false)}
+      enableResizing={false}
       onDragStop={() => {
         setTimeout(() => setCanClick(true), 1);
       }}
