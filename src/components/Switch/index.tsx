@@ -44,6 +44,7 @@ const Slider = styled.span<{ checked: boolean }>`
 `;
 
 const Switch: React.FC<SwitchProps> = ({ checked, onChange }) => {
+  console.log({ checked });
   return (
     <SwitchContainer>
       <SwitchInput checked={checked} onChange={onChange} />

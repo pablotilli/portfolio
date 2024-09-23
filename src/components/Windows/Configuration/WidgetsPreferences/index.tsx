@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useAppDispatch } from '../../../../hooks/reduxHooks';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/reduxHooks';
 import { changeWidget } from '../../../../redux/features/theme/themeSlice';
 import Switch from '../../../Switch';
 
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
+import { selectWidgets } from '../../../../redux/features/theme/themeSelectors';
 
 const Container = styled.div`
   padding: 15px;
@@ -46,12 +47,16 @@ const WidgetSwitcher = styled.div`
 export default function WidgetsPreferences() {
   const dispatch = useAppDispatch();
 
-  const [isChecked, setIsChecked] = useState(true);
+  const widgets = useAppSelector(selectWidgets);
+
+  const weatherWidget = widgets.find(({ name }) => name === 'weather');
+
+  const isChecked = Boolean(weatherWidget?.visible);
 
   const { t } = useTranslation();
 
   const handleSwitchChange = () => {
-    setIsChecked(!isChecked);
+    //setIsChecked(!isChecked);
     dispatch(changeWidget({ name: 'weather', show: !isChecked }));
   };
 

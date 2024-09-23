@@ -33,6 +33,8 @@ const themeSlice = createSlice({
         ({ name }) => name === action.payload.name
       );
 
+      console.log({ widget }, action.payload.show);
+
       if (widget) {
         widget.visible = action.payload.show;
       }
