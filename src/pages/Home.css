@@ -172,6 +172,10 @@
   }
 }
 
+.vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
+  animation: none !important;
+}
+
 @media screen and (max-width: 900px) {
   .home {
     flex-direction: column;
@@ -204,12 +208,4 @@
     border-bottom-left-radius: 23px;
     border-bottom-right-radius: 23px;
   }
-
-  /*   div.mobile-content > div > div:nth-child(1) {
-    flex: 2;
-  }
-  div.mobile-content > div > div:nth-child(2) {
-    flex: 1;
-    height: 50svh;
-  } */
 }

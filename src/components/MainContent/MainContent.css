@@ -2,9 +2,3 @@
   overflow-y: auto;
   height: 100%;
 }
-
-.vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
-  visibility: visible;
-  -webkit-animation: none;
-  animation: none;
-}

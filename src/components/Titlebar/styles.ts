@@ -16,11 +16,6 @@ export const StyledTitlebar = styled.div<{ active: boolean }>`
   border-top-right-radius: 10px;
 `;
 
-export const ButtonsContainer = styled.div`
-  display: flex;
-  gap: 8px;
-`;
-
 export const Title = styled.div<{ active: boolean }>`
   flex-grow: 1;
   text-align: center;
@@ -39,8 +34,12 @@ export const Button = styled.div`
   position: relative;
 
   &::before {
-    display: block;
     position: absolute;
+    display: none;
+  }
+
+  &:hover::before {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   }
 
   &.close {
@@ -52,12 +51,8 @@ export const Button = styled.div`
       height: 11px;
       font-size: 11px;
       top: -3px;
-      left: 3px;
+      left: 3.5px;
       display: none;
-    }
-
-    &:hover::before {
-      display: block;
     }
   }
 
@@ -69,13 +64,9 @@ export const Button = styled.div`
 
       height: 12px;
       font-size: 13px;
-      top: -4px;
-      left: 3px;
+      top: -3.5px;
+      left: 3.3px;
       display: none;
-    }
-
-    &:hover::before {
-      display: block;
     }
   }
 
@@ -87,13 +78,18 @@ export const Button = styled.div`
 
       height: 12px;
       font-size: 14px;
-      top: -5.2px;
-      left: 1.5px;
+      top: -5.3px;
+      left: 1.3px;
       display: none;
     }
+  }
+`;
 
-    &:hover::before {
-      display: block;
-    }
+export const ButtonsContainer = styled.div`
+  display: flex;
+  gap: 8px;
+
+  &:hover ${Button}::before {
+    display: block;
   }
 `;

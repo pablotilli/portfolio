@@ -48,6 +48,15 @@ const JobTitle = styled.p`
   color: white;
 `;
 
+const Title = styled.p`
+  font-weight: bold !important;
+  font-size: 1.2rem !important;
+
+  background: #0056b3;
+  padding: 4px 8px 6px 8px;
+  border-radius: 3px;
+`;
+
 interface MainContentProps {
   sectionsRefs: RefObject<HTMLElement>[];
   contentRef: RefObject<HTMLDivElement>;
@@ -140,11 +149,11 @@ const MainContent = forwardRef<HTMLDivElement, MainContentProps>(
                   {t('cv_content.sections.work_experience.jobs.1.description')}
                 </p>
 
-                <p>
+                <Title>
                   {t(
                     'cv_content.sections.work_experience.jobs.1.responsibilities_title'
                   )}
-                </p>
+                </Title>
                 <p>
                   {t(
                     'cv_content.sections.work_experience.jobs.1.responsibilities.1'
@@ -165,11 +174,11 @@ const MainContent = forwardRef<HTMLDivElement, MainContentProps>(
                     'cv_content.sections.work_experience.jobs.1.technologies.3'
                   )}
                 </p>
-                <p>
+                <Title>
                   {t(
                     'cv_content.sections.work_experience.jobs.1.achievements_title'
                   )}
-                </p>
+                </Title>
                 <p>
                   •{' '}
                   {t(
@@ -225,11 +234,11 @@ const MainContent = forwardRef<HTMLDivElement, MainContentProps>(
                 <p>
                   {t('cv_content.sections.work_experience.jobs.2.description')}
                 </p>
-                <p>
+                <Title>
                   {t(
                     'cv_content.sections.work_experience.jobs.2.responsibilities_title'
                   )}
-                </p>
+                </Title>
                 <p>
                   {t(
                     'cv_content.sections.work_experience.jobs.2.responsibilities.1'
@@ -251,11 +260,11 @@ const MainContent = forwardRef<HTMLDivElement, MainContentProps>(
                     'cv_content.sections.work_experience.jobs.2.technologies.3'
                   )}
                 </p>
-                <p>
+                <Title>
                   {t(
                     'cv_content.sections.work_experience.jobs.2.achievements_title'
                   )}
-                </p>
+                </Title>
 
                 <p>
                   •{' '}
@@ -300,11 +309,11 @@ const MainContent = forwardRef<HTMLDivElement, MainContentProps>(
                     'cv_content.sections.work_experience.jobs.3.technologies.1'
                   )}
                 </p>
-                <p>
+                <Title>
                   {t(
                     'cv_content.sections.work_experience.jobs.3.responsibilities_title'
                   )}
-                </p>
+                </Title>
                 <p>
                   {t(
                     'cv_content.sections.work_experience.jobs.3.responsibilities.1'
@@ -325,11 +334,11 @@ const MainContent = forwardRef<HTMLDivElement, MainContentProps>(
                     'cv_content.sections.work_experience.jobs.3.responsibilities.4'
                   )}
                 </p>
-                <p>
+                <Title>
                   {t(
                     'cv_content.sections.work_experience.jobs.3.achievements_title'
                   )}
-                </p>
+                </Title>
 
                 <p>
                   •{' '}
@@ -365,12 +374,11 @@ const MainContent = forwardRef<HTMLDivElement, MainContentProps>(
                 <p>
                   {t('cv_content.sections.work_experience.jobs.4.description')}
                 </p>
-                <p>
-                  {' '}
+                <Title>
                   {t(
                     'cv_content.sections.work_experience.jobs.4.achievements_title'
                   )}
-                </p>
+                </Title>
                 <p>
                   •{' '}
                   {t(
