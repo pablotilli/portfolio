@@ -7,7 +7,7 @@ import Lamp from '../Lamp';
 import CvWindow from '../Windows/CV';
 import ContactWindow from '../Windows/Contact';
 import Login from '../Login';
-import Home from '../../pages/Home';
+import Home from '../Home';
 import DesktopIcon from '../DesktopIcon';
 import DesktopIconsContainer from '../DesktopIconsContainer';
 

@@ -1,7 +1,7 @@
 import React, { Ref, useEffect, useRef, useState } from 'react';
 
 import './styles.css';
-import Home from '../../pages/Home';
+import Home from '../Home';
 
 import Login from '../Login';
 

@@ -1,0 +1,8 @@
+.main-content {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
+  animation: none !important;
+}

@@ -1,29 +1,34 @@
-import React, { useEffect, Suspense, useState } from 'react';
+import { useEffect, Suspense, useState } from 'react';
 
-import './Home.css';
-
-import { Canvas } from '@react-three/fiber';
-
-// @ts-ignore
-import { OrbitControls, Environment, Text } from '@react-three/drei';
-
-import { PulseLoader } from 'react-spinners';
-
-import Slider from '../components/Slider';
-import Typewriter from 'react-ts-typewriter';
-
-import { useAppDispatch, useAppSelector } from '../hooks/reduxHooks';
-import { handleLight } from '../redux/features/global/globalSlice';
-
-import { useTranslation } from 'react-i18next';
-
+import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
+import { handleLight } from '../../redux/features/global/globalSlice';
 import {
   selectIsLogged,
   selectIsMobile,
   selectAnimateIntro,
-} from '../redux/features/global/globalSelectors';
+} from '../../redux/features/global/globalSelectors';
 
-import Cube, { CameraAnimation } from '../components/Cube';
+import { useTranslation } from 'react-i18next';
+
+// @ts-ignore
+import { OrbitControls, Environment } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+
+import { PulseLoader } from 'react-spinners';
+
+import Typewriter from 'react-ts-typewriter';
+
+import Slider from '../Slider';
+
+import Cube, { CameraAnimation } from '../Cube';
+
+import {
+  ContinueTextContainer,
+  HomeContainer,
+  LampIndicator,
+  MobileLoader,
+  TextContainer,
+} from './styles';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -49,7 +54,7 @@ const Home = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="home">
+    <HomeContainer>
       <Canvas
         camera={{
           position: [6, 6, 6],
@@ -69,7 +74,7 @@ const Home = () => {
         )}
       </Canvas>
 
-      <div className="text-container">
+      <TextContainer>
         {animateIntro ? (
           <>
             {typeWriterLine === 0 ? (
@@ -160,7 +165,7 @@ const Home = () => {
             )}
           </>
         ) : (
-          <>
+          <ContinueTextContainer>
             <p className="fadein-1" style={{ marginBottom: '25px' }}>
               {t('intro_content.paragraphs.6')}
             </p>
@@ -172,16 +177,16 @@ const Home = () => {
                   : t('intro_content.paragraphs.9')
               }`}
             </p>
-          </>
+          </ContinueTextContainer>
         )}
         {typeWriterFinished && !isMobile && (
-          <div
-            className={`lamp-indicator ${
+          <LampIndicator
+            className={`${
               animateShowLampIndicator ? 'lamp-indicator-show' : ''
             }`}
           >
             <img src="/images/flecha-derecha.png" />
-          </div>
+          </LampIndicator>
         )}
 
         {isMobile && (
@@ -194,12 +199,12 @@ const Home = () => {
         )}
 
         {isMobile && !isLogged && !typeWriterFinished && animateIntro && (
-          <div className="mobile-loader">
+          <MobileLoader>
             <PulseLoader color="gray" speedMultiplier={0.6} size={10} />
-          </div>
+          </MobileLoader>
         )}
-      </div>
-    </div>
+      </TextContainer>
+    </HomeContainer>
   );
 };
 

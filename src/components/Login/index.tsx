@@ -6,6 +6,8 @@ import {
   AvatarImage,
   LoginButton,
   IndicatorsBar,
+  FingerprintCcontainer,
+  Fingerprint,
 } from './styles';
 
 import Slider from '../Slider';
@@ -143,13 +145,13 @@ export default function Login({ handleLogin }: LoginProps) {
 
           {isMobile ? (
             <>
-              <div className="fingerprint-container">
-                <img
-                  className={`fingerprint fingerprint-visible`}
+              <FingerprintCcontainer /* className="fingerprint-container" */>
+                <Fingerprint
+                  className={`fingerprint-visible`}
                   src="/images/fingerprint.png"
                   onClick={() => dispatch(handleLogin)}
                 />
-              </div>
+              </FingerprintCcontainer>
               <Slider
                 color="red"
                 visible

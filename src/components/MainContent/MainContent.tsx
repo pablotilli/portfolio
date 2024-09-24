@@ -14,6 +14,8 @@ import { Section } from '../Windows/CV/Section';
 import TechContent from './TechContent';
 import { useTranslation } from 'react-i18next';
 
+import './styles.css'
+
 const AppContainer = styled.div`
   display: flex;
   width: 100%;
