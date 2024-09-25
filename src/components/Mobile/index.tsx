@@ -25,10 +25,8 @@ import {
 } from '../../redux/features/global/globalSlice';
 
 import {
-  selectImagesFiles,
   selectImageViewer,
   selectIsLogged,
-  selectIsMobile,
   selectLightOn,
 } from '../../redux/features/global/globalSelectors';
 import {
@@ -44,14 +42,9 @@ import 'react-grid-layout/css/styles.css';
 import MobileIcon from '../MobileIcon';
 
 import { useNavigate } from 'react-router-dom';
-import ConfigurationSidebar from '../ConfigurationSidebar';
-import WallpaperPerferences from '../Windows/Configuration/WallpaperPreferences';
-import AppearencePreferences from '../Windows/Configuration/AppearencePreferences';
-import LanguagePreferences from '../Windows/Configuration/LanguagePreferences';
-import WidgetsPreferences from '../Windows/Configuration/WidgetsPreferences';
+
 import WeatherWidget from '../WeatherWidget';
-import ContactForm from '../ContactForm';
-import FilesList from '../FilesList';
+
 import ImageViewerWindow from '../ImageViewer';
 import styled from 'styled-components';
 import MobileScreenManager from '../MobileScreenManager';
@@ -65,6 +58,7 @@ import ContactFormScreen from '../MobileScreen/ContactFormScreen';
 import AppearencePreferencesScreen from '../MobileScreen/AppearencePreferencesScreen';
 import AboutPortfolioScreen from '../MobileScreen/AboutPortfolioScreen';
 import FileExplorerDocumentsScreen from '../MobileScreen/FileExplorerDocumentsScreen';
+import { TopBar } from './styles';
 
 const SystemNavigationbar = styled.div`
   /*     background-color: red; */
@@ -299,12 +293,6 @@ export default function Mobile() {
     navigate('/ScreenManager');
   };
 
-  const variants = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: { opacity: 1, transition: { duration: 0.2 }, scale: 1 },
-    exit: { opacity: 0, transition: { duration: 0.1 }, scale: 0 },
-  };
-
   function getIsTouchDevice() {
     return window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
   }
@@ -312,6 +300,31 @@ export default function Mobile() {
   const [isTouchDevice, setIsTouchDevice] = useState(getIsTouchDevice());
 
   window.addEventListener('resize', () => setIsTouchDevice(getIsTouchDevice()));
+
+  const [formattedTime, setFormattedTime] = useState('');
+
+  function getCurrentTime() {
+    const currentDate = new Date();
+
+    const hours = currentDate.getHours().toString().padStart(2, '0');
+    const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+
+    const formattedTime = `${hours}:${minutes}`;
+
+    return formattedTime;
+  }
+
+  const updateTime = () => {
+    const currentTime = getCurrentTime();
+
+    setFormattedTime(currentTime);
+  };
+
+  useEffect(() => {
+    updateTime();
+
+    setInterval(updateTime, 1000);
+  }, []);
 
   return (
     <div
@@ -338,19 +351,12 @@ export default function Mobile() {
               : 'none',
         }}
       >
-        {/*           <div
-            className="glass"
-            style={{
-              background: 'url(/images/mobile_glass.png) no-repeat',
-            }}
-          ></div> */}
-
         <MobileStatusBarContainer
           transparent={
             !(hasOpenedScreen() && location.pathname !== '/ScreenManager')
           }
         >
-          <div className="left-status-bar">22:38</div>
+          <div className="left-status-bar">{formattedTime}</div>
           <div className="notch">
             <div
               style={{
@@ -386,27 +392,15 @@ export default function Mobile() {
                 <>
                   {hasOpenedScreen() &&
                     location.pathname !== '/ScreenManager' && (
-                      <div
-                        style={{
-                          height: '50px',
-                          /*  background: 'green', */
-                          lineHeight: '50px',
-                        }}
-                      >
+                      <TopBar>
                         <span
-                          style={{
-                            color: 'white',
-                            marginTop: '5px',
-                            marginLeft: '23px',
-                            fontSize: '2rem',
-                          }}
                           onClick={() => {
                             navigate(-1);
                           }}
                         >
                           <ArrowBackIosIcon />
                         </span>
-                      </div>
+                      </TopBar>
                     )}
                 </>
               )}
@@ -447,8 +441,6 @@ export default function Mobile() {
                                 h: 1,
                                 isBounded: true,
                               }}
-                              /*  onTouchStart={handleTouchStart}
-                              onTouchEndCapture={() => handleTouchEnd(app)} */
                             >
                               {widgets.find(({ name }) => name === 'weather')
                                 ?.visible && <WeatherWidget version="mobile" />}
@@ -479,13 +471,6 @@ export default function Mobile() {
 
                         <div className="mobile-dock-container">
                           <div className="mobile-dock">
-                            {/*                         <div
-                              className="mobile-dock-icon"
-                              onClick={() => showScreen(null)}
-                            >
-                              <img src="/images/home_dock_icon.png" />
-                            </div> */}
-
                             <div
                               className="mobile-dock-icon"
                               onClick={() => showScreen('Configuration')}

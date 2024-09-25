@@ -111,18 +111,16 @@ export const FingerprintCcontainer = styled.div`
 export const Fingerprint = styled.img`
   height: 8svh;
 
+  transform: scale(0.9);
+
   margin: 10px;
 
-  /*  opacity: 0; */
   transition: all 3s;
   width: 8svh;
 
-  /* .fingerprint-visible { */
-  /*  opacity: 0.7; */
   animation: pulse 5s infinite;
   animation-delay: 2s;
   z-index: 2;
-  /*  } */
 
   @keyframes pulse {
     0% {
