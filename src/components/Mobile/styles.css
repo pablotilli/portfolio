@@ -19,15 +19,14 @@ body {
 
 .mobile-dock {
   position: absolute;
-  /*   background-color: blue; */
+
   width: 90%;
   height: 90%;
   left: calc(10% / 2);
   border-radius: 30px;
   background-color: rgba(128, 128, 128, 0.267);
-  display: flex; /*  grid; */
+  display: flex;
 
-  /* grid-template-columns: repeat(4, 1fr); */
   gap: 5px;
 
   padding: 7px;
@@ -35,7 +34,7 @@ body {
 
 .mobile-dock-icon {
   width: 100%;
-  /*   background-color: red; */
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +45,6 @@ body {
 }
 
 .mobile-status-bar {
-  /*   background-color: red; */
   display: flex;
   padding: 10px 0;
 
@@ -62,10 +60,6 @@ body {
 }
 
 .mobile-content {
-  /* background-color: black; */
-  /*  height: calc(100% - 32px); */
-  /*   border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px; */
   height: 100%;
 }
 
@@ -111,7 +105,7 @@ body {
   pointer-events: none;
 }
 
-.display-content {
+/* .display-content {
   height: 100%;
   width: 100%;
 
@@ -124,4 +118,4 @@ body {
   position: relative;
   background-size: cover;
   background-position: center;
-}
+} */
