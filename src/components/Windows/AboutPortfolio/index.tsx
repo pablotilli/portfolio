@@ -102,14 +102,14 @@ export default function AboutPorfolio(props: BaseWindowProps) {
 
         <NavBarComponent />
 
-        <AboutPortfolioContent
+        {/*         <AboutPortfolioContent
           sectionsRefs={sectionsRefs}
           contentRef={contentRef}
-        />
+        /> */}
 
-        {/* <div style={{ width: '100%', height: '600px' }}>
-          <WebSite url="http://localhost:3000" />
-        </div> */}
+        <div style={{ width: '100%', height: '600px' }}>
+          <WebSite url="https://github.com/pablotilli/portfolio" />
+        </div>
       </Container>
     </BaseWindow>
   );
