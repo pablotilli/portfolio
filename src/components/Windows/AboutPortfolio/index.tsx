@@ -1,24 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 import '../../Desktop/styles.css';
-import Sidebar from '../../Sidebar';
-
 import BaseWindow from '../BaseWindow';
 import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
 import AboutPortfolioContent from './AboutPortfolioContent';
 import styled from 'styled-components';
 import AboutPortfolioNavbar from './AboutPortfolioNavbar';
 import NavBarComponent from './NavBarComponent';
-import WebSite from './Website';
+
 import { useTranslation } from 'react-i18next';
 
 interface BaseWindowProps {
-  handleWindow: (event: string, windowName: string, data: any) => void; // Ajusta el tipo según sea necesario
-  window: any; // Ajusta el tipo según sea necesario
-  handleWindowNEW: (info: Array<any>) => void; // Ajusta el tipo según sea necesario
+  handleWindow: (event: string, windowName: string, data: any) => void;
+  window: any;
+  handleWindowNEW: (info: Array<any>) => void;
   windowName: string;
   activeDockIconPosition: { x: number; y: number };
   backgroundColor?: string;
-  handleActiveWindow: (activeWindowName: string) => void; // Ajusta el tipo según sea necesario
+  handleActiveWindow: (activeWindowName: string) => void;
   isActiveWindow: boolean;
   visible: boolean;
 }
