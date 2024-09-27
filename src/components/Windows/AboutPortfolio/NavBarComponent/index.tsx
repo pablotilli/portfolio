@@ -54,11 +54,19 @@ const IconWrapper = styled.div`
   }
 `;
 
-const NavBarComponent: React.FC = () => {
+interface NavBarComponentProps {
+  handlePrev: () => void;
+  handleNext: () => void;
+}
+
+const NavBarComponent: React.FC<NavBarComponentProps> = ({
+  handlePrev,
+  handleNext,
+}) => {
   return (
     <NavBar>
-      <NavButton>{'<'}</NavButton>
-      <NavButton>{'>'}</NavButton>
+      <NavButton onClick={handlePrev}>{'<'}</NavButton>
+      <NavButton onClick={handleNext}>{'>'}</NavButton>
       <SearchInput type="text" placeholder="localhost:3000" disabled />
       <NavIcons>
         <IconWrapper>⭐</IconWrapper>

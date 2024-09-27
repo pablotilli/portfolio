@@ -33,6 +33,8 @@ const Container = styled.div`
 export default function AboutPorfolio(props: BaseWindowProps) {
   const { t } = useTranslation();
 
+  const containerRef = useRef(null);
+
   const sectionsRefs = [
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -47,7 +49,7 @@ export default function AboutPorfolio(props: BaseWindowProps) {
   const [currentSection, setCurrentSection] = useState(0);
 
   useEffect(() => {
-    console.log('Avisar!!');
+    console.log('Avisar!!', currentSection);
   }, [currentSection]);
 
   useEffect(() => {
@@ -92,6 +94,42 @@ export default function AboutPorfolio(props: BaseWindowProps) {
     }
   };
 
+  const handlePrev = () => {
+    console.log(contentRef.current);
+
+    if (currentSection > 0) {
+      const prevSectionRef = sectionsRefs[currentSection - 1].current;
+
+      if (prevSectionRef && contentRef.current) {
+        let sectionTop = prevSectionRef.offsetTop - 40;
+
+        if (currentSection === 1) {
+          sectionTop = 0;
+        }
+
+        contentRef.current.scrollTo({
+          top: sectionTop,
+          behavior: 'smooth',
+        });
+      }
+    }
+  };
+
+  const handleNext = () => {
+    console.log({ currentSection });
+
+    if (currentSection < sectionsRefs.length - 1) {
+      const nextSectionRef = sectionsRefs[currentSection + 1].current;
+
+      if (nextSectionRef && contentRef.current) {
+        contentRef.current.scrollTo({
+          top: nextSectionRef.offsetTop - 40,
+          behavior: 'smooth',
+        });
+      }
+    }
+  };
+
   return (
     <BaseWindow {...props} title={t('about_this_proyect')}>
       <Container>
@@ -100,16 +138,16 @@ export default function AboutPorfolio(props: BaseWindowProps) {
           handleScrollTo={handleScrollTo}
         />
 
-        <NavBarComponent />
+        <NavBarComponent handlePrev={handlePrev} handleNext={handleNext} />
 
-        {/*         <AboutPortfolioContent
+        <AboutPortfolioContent
           sectionsRefs={sectionsRefs}
           contentRef={contentRef}
-        /> */}
+        />
 
-        <div style={{ width: '100%', height: '600px' }}>
-          <WebSite url="https://github.com/pablotilli/portfolio" />
-        </div>
+        {/* <div style={{ width: '100%', height: '600px' }}>
+          <WebSite url="http://localhost:3000" />
+        </div> */}
       </Container>
     </BaseWindow>
   );
