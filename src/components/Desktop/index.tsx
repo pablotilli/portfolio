@@ -11,7 +11,7 @@ import Home from '../Home';
 import DesktopIcon from '../DesktopIcon';
 import DesktopIconsContainer from '../DesktopIconsContainer';
 
-import GitHubCorners from '@uiw/react-github-corners';
+import GithubCorner from 'react-github-corner';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
 
@@ -472,9 +472,9 @@ function Desktop() {
 
   return (
     <>
-      <GitHubCorners
-        position="right"
+      <GithubCorner
         href="https://github.com/pablotilli/portfolio"
+        target="__blank"
       />
       <motion.div
         initial={{ opacity: 0 }}
