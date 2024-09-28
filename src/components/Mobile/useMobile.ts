@@ -187,7 +187,6 @@ export default function useMobile() {
   };
 
   const handleGoHome = () => {
-    console.log('Path', location.pathname);
     if (location.pathname !== '/') {
       navigate('/');
     }

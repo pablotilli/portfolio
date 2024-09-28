@@ -18,10 +18,6 @@ export default function CVMobileScreen() {
   const [currentSection, setCurrentSection] = useState(0);
 
   useEffect(() => {
-    console.log('Avisar!!');
-  }, [currentSection]);
-
-  useEffect(() => {
     sectionsRefs.forEach((ref) => {
       const h2Element = ref.current?.querySelector('h2');
       if (h2Element) {

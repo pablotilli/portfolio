@@ -77,8 +77,6 @@ const Dock = ({
     <nav ref={dockRef} className="dock">
       <ul>
         {apps.map(({ name, icon, isOpen, target }: any) => {
-          console.log({ target });
-
           return (
             <li
               style={{ display: isOpen ? 'block' : 'none' }}

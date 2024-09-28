@@ -75,8 +75,6 @@ export default function ImageViewerWindow() {
           <Swiper
             spaceBetween={50}
             slidesPerView={1}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper: SwiperClass) => console.log(swiper)}
             style={{ height: '100%' }}
             navigation={true}
             modules={[Navigation]}

@@ -123,8 +123,6 @@ const AboutPortfolioNavbar: React.FC<SidebarProps> = ({
   };
  */
   const active = (id: string) => {
-    /*     setIsTabClick(true); */
-    console.log({ id });
     setTabs(tabs.map((tab) => ({ ...tab, active: id === tab.id })));
     handleScrollTo(parseInt(id));
   };

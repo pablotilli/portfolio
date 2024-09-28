@@ -100,11 +100,6 @@ export default function FileExplorerWindow(props: FileExplorerWindow) {
     getSection()
   );
 
-  useEffect(
-    () => console.log({ activeSection }, props.section),
-    [activeSection]
-  );
-
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
   };

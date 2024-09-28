@@ -143,11 +143,6 @@ export default function BaseWindow({
       if (targetWindow.lastWindowState === windowStates.MAXIMIZED) {
         handleWindow('state', windowName, targetWindow.lastWindowState);
       } else {
-        console.log(
-          'laswindowstate!!!',
-          targetWindow.lastWindowState,
-          targetWindow
-        );
         setTimeout(() => {
           handleWindow('state', windowName, targetWindow.lastWindowState);
         }, 300);

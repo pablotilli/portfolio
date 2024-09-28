@@ -14,7 +14,7 @@ import { Section } from '../Windows/CV/Section';
 import TechContent from './TechContent';
 import { useTranslation } from 'react-i18next';
 
-import './styles.css'
+import './styles.css';
 
 const AppContainer = styled.div`
   display: flex;
@@ -85,8 +85,6 @@ const MainContent = forwardRef<HTMLDivElement, MainContentProps>(
         window.removeEventListener('resize', handleResize);
       };
     }, []);
-
-    console.log({ isLarge });
 
     return (
       <AppContainer id="cv-content">

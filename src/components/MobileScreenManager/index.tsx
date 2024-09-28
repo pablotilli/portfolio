@@ -64,8 +64,6 @@ export default function MobileScreenManager({
       const parentWidth = parentElement.offsetWidth;
       const parentLeft = parentElement.getBoundingClientRect().left;
 
-      console.log(data, { parentLeft });
-
       targetElement.style.opacity = '1';
 
       if (data.lastX > parentWidth - 50 || data.lastX < -100) {

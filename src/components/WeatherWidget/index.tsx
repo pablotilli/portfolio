@@ -126,7 +126,7 @@ const WeatherWidget = ({
             {version === 'desktop' && <h2>{weatherData.name}</h2>}
             <div className="weather-detail-container">
               <img
-                src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+                src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
                 alt={weatherData.weather[0].description}
               />
 

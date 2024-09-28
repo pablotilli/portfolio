@@ -47,10 +47,6 @@ export default function AboutPorfolio(props: BaseWindowProps) {
   const [currentSection, setCurrentSection] = useState(0);
 
   useEffect(() => {
-    console.log('Avisar!!', currentSection);
-  }, [currentSection]);
-
-  useEffect(() => {
     sectionsRefs.forEach((ref) => {
       const h2Element = ref.current?.querySelector('h2');
       if (h2Element) {
@@ -93,8 +89,6 @@ export default function AboutPorfolio(props: BaseWindowProps) {
   };
 
   const handlePrev = () => {
-    console.log(contentRef.current);
-
     if (currentSection > 0) {
       const prevSectionRef = sectionsRefs[currentSection - 1].current;
 
@@ -114,8 +108,6 @@ export default function AboutPorfolio(props: BaseWindowProps) {
   };
 
   const handleNext = () => {
-    console.log({ currentSection });
-
     if (currentSection < sectionsRefs.length - 1) {
       const nextSectionRef = sectionsRefs[currentSection + 1].current;
 
