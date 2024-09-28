@@ -11,6 +11,8 @@ import Home from '../Home';
 import DesktopIcon from '../DesktopIcon';
 import DesktopIconsContainer from '../DesktopIconsContainer';
 
+import GitHubCorners from '@uiw/react-github-corners';
+
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
 
 import {
@@ -469,184 +471,195 @@ function Desktop() {
   }, [wallpaper]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 5 }}
-    >
-      <>
-        {!lightOn && <Home />}
-        <div
-          className={`main-scene-container ${
-            !lightOn ? 'light-off' : 'light-on'
-          }`}
-        >
-          <div className="cup-with-steam">
-            <img src="/images/coffee_cup.png" alt="" />
+    <>
+      <GitHubCorners
+        position="right"
+        href="https://github.com/pablotilli/portfolio"
+      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 5 }}
+      >
+        <>
+          {!lightOn && <Home />}
+          <div
+            className={`main-scene-container ${
+              !lightOn ? 'light-off' : 'light-on'
+            }`}
+          >
+            <div className="cup-with-steam">
+              <img src="/images/coffee_cup.png" alt="" />
 
-            <div className="steam">
-              {spansData.map((i, index) => (
-                <span key={index} style={{ '--i': i } as CSSProperties}></span>
-              ))}
+              <div className="steam">
+                {spansData.map((i, index) => (
+                  <span
+                    key={index}
+                    style={{ '--i': i } as CSSProperties}
+                  ></span>
+                ))}
+              </div>
             </div>
+            <div className="computer-container">
+              <div id="routes-container">
+                <div className="web-camera">O</div>
+
+                <>
+                  <div
+                    className={`overlay ${showOverlay ? 'show-overlay' : ''}`}
+                  />
+
+                  {imageViewer.visible ? <ImageViewerWindow /> : <></>}
+
+                  <div
+                    className="main-container"
+                    style={{
+                      backgroundImage: `url(/images/${wallpaper})`,
+                    }}
+                  >
+                    {!isLogged ? (
+                      <>
+                        <Login handleLogin={() => dispatch(handleLogin())} />
+                      </>
+                    ) : (
+                      <>
+                        <DesktopIconsContainer>
+                          <>
+                            {apps.map((app) => (
+                              <DesktopIcon
+                                onClick={handleDesktopIconClick}
+                                appData={app}
+                                size="desktop"
+                              />
+                            ))}
+                          </>
+                          {widgets.find(({ name }) => name === 'weather')
+                            ?.visible && <WeatherWidget />}
+                        </DesktopIconsContainer>
+
+                        <CvWindow
+                          handleWindow={handleWindow}
+                          window={windows.CV}
+                          handleWindowNEW={handleWindowNEW}
+                          windowName="CV"
+                          activeDockIconPosition={activeDockIconPosition}
+                          handleActiveWindow={handleActiveWindow}
+                          isActiveWindow={
+                            activeWindow ? activeWindow.target === 'CV' : false
+                          }
+                          visible={windows.CV.state !== windowStates.CLOSED}
+                        />
+
+                        <ContactWindow
+                          handleWindow={handleWindow}
+                          window={windows.Contact}
+                          handleWindowNEW={handleWindowNEW}
+                          windowName="Contact"
+                          activeDockIconPosition={activeDockIconPosition}
+                          handleActiveWindow={handleActiveWindow}
+                          isActiveWindow={
+                            activeWindow
+                              ? activeWindow.target === 'Contact'
+                              : false
+                          }
+                          visible={
+                            windows.Contact.state !== windowStates.CLOSED
+                          }
+                        />
+
+                        <ConfigurationWindow
+                          handleWindow={handleWindow}
+                          window={windows.Configuration}
+                          handleWindowNEW={handleWindowNEW}
+                          windowName="Configuration"
+                          activeDockIconPosition={activeDockIconPosition}
+                          handleActiveWindow={handleActiveWindow}
+                          isActiveWindow={
+                            activeWindow
+                              ? activeWindow.target === 'Configuration'
+                              : false
+                          }
+                          visible={
+                            windows.Configuration.state !== windowStates.CLOSED
+                          }
+                        />
+
+                        <FileExplorerWindow
+                          handleWindow={handleWindow}
+                          window={windows.FileExplorerPhotos}
+                          handleWindowNEW={handleWindowNEW}
+                          windowName="FileExplorerPhotos"
+                          activeDockIconPosition={activeDockIconPosition}
+                          handleActiveWindow={handleActiveWindow}
+                          isActiveWindow={
+                            activeWindow
+                              ? activeWindow.target === 'FileExplorerPhotos'
+                              : false
+                          }
+                          visible={
+                            windows.FileExplorerPhotos.state !==
+                            windowStates.CLOSED
+                          }
+                          section="Photos"
+                        />
+
+                        <FileExplorerWindow
+                          handleWindow={handleWindow}
+                          window={windows.FileExplorerDocuments}
+                          handleWindowNEW={handleWindowNEW}
+                          windowName="FileExplorerDocuments"
+                          activeDockIconPosition={activeDockIconPosition}
+                          handleActiveWindow={handleActiveWindow}
+                          isActiveWindow={
+                            activeWindow
+                              ? activeWindow.target === 'FileExplorerDocuments'
+                              : false
+                          }
+                          visible={
+                            windows.FileExplorerDocuments.state !==
+                            windowStates.CLOSED
+                          }
+                          section="Documents"
+                        />
+
+                        <AboutPorfolio
+                          handleWindow={handleWindow}
+                          window={windows.AboutPorfolio}
+                          handleWindowNEW={handleWindowNEW}
+                          windowName="AboutPorfolio"
+                          activeDockIconPosition={activeDockIconPosition}
+                          handleActiveWindow={handleActiveWindow}
+                          isActiveWindow={
+                            activeWindow
+                              ? activeWindow.target === 'AboutPorfolio'
+                              : false
+                          }
+                          visible={
+                            windows.AboutPorfolio.state !== windowStates.CLOSED
+                          }
+                        />
+
+                        <Dock
+                          apps={apps}
+                          onIconClick={handleDockIconClick}
+                          activeWindowName={activeWindow?.name}
+                          activeWindowTarget={activeWindow?.target}
+                        />
+                      </>
+                    )}
+                  </div>
+                </>
+              </div>
+              <div className="monitor-base">
+                <img src="/images/display-base.png" />
+              </div>
+            </div>
+            <Lamp onChange={handleLightChange} blink={!isLogged && !lightOn} />
+            <div className="desktop"></div>
           </div>
-          <div className="computer-container">
-            <div id="routes-container">
-              <div className="web-camera">O</div>
-
-              <>
-                <div
-                  className={`overlay ${showOverlay ? 'show-overlay' : ''}`}
-                />
-
-                {imageViewer.visible ? <ImageViewerWindow /> : <></>}
-
-                <div
-                  className="main-container"
-                  style={{
-                    backgroundImage: `url(/images/${wallpaper})`,
-                  }}
-                >
-                  {!isLogged ? (
-                    <>
-                      <Login handleLogin={() => dispatch(handleLogin())} />
-                    </>
-                  ) : (
-                    <>
-                      <DesktopIconsContainer>
-                        <>
-                          {apps.map((app) => (
-                            <DesktopIcon
-                              onClick={handleDesktopIconClick}
-                              appData={app}
-                              size="desktop"
-                            />
-                          ))}
-                        </>
-                        {widgets.find(({ name }) => name === 'weather')
-                          ?.visible && <WeatherWidget />}
-                      </DesktopIconsContainer>
-
-                      <CvWindow
-                        handleWindow={handleWindow}
-                        window={windows.CV}
-                        handleWindowNEW={handleWindowNEW}
-                        windowName="CV"
-                        activeDockIconPosition={activeDockIconPosition}
-                        handleActiveWindow={handleActiveWindow}
-                        isActiveWindow={
-                          activeWindow ? activeWindow.target === 'CV' : false
-                        }
-                        visible={windows.CV.state !== windowStates.CLOSED}
-                      />
-
-                      <ContactWindow
-                        handleWindow={handleWindow}
-                        window={windows.Contact}
-                        handleWindowNEW={handleWindowNEW}
-                        windowName="Contact"
-                        activeDockIconPosition={activeDockIconPosition}
-                        handleActiveWindow={handleActiveWindow}
-                        isActiveWindow={
-                          activeWindow
-                            ? activeWindow.target === 'Contact'
-                            : false
-                        }
-                        visible={windows.Contact.state !== windowStates.CLOSED}
-                      />
-
-                      <ConfigurationWindow
-                        handleWindow={handleWindow}
-                        window={windows.Configuration}
-                        handleWindowNEW={handleWindowNEW}
-                        windowName="Configuration"
-                        activeDockIconPosition={activeDockIconPosition}
-                        handleActiveWindow={handleActiveWindow}
-                        isActiveWindow={
-                          activeWindow
-                            ? activeWindow.target === 'Configuration'
-                            : false
-                        }
-                        visible={
-                          windows.Configuration.state !== windowStates.CLOSED
-                        }
-                      />
-
-                      <FileExplorerWindow
-                        handleWindow={handleWindow}
-                        window={windows.FileExplorerPhotos}
-                        handleWindowNEW={handleWindowNEW}
-                        windowName="FileExplorerPhotos"
-                        activeDockIconPosition={activeDockIconPosition}
-                        handleActiveWindow={handleActiveWindow}
-                        isActiveWindow={
-                          activeWindow
-                            ? activeWindow.target === 'FileExplorerPhotos'
-                            : false
-                        }
-                        visible={
-                          windows.FileExplorerPhotos.state !==
-                          windowStates.CLOSED
-                        }
-                        section="Photos"
-                      />
-
-                      <FileExplorerWindow
-                        handleWindow={handleWindow}
-                        window={windows.FileExplorerDocuments}
-                        handleWindowNEW={handleWindowNEW}
-                        windowName="FileExplorerDocuments"
-                        activeDockIconPosition={activeDockIconPosition}
-                        handleActiveWindow={handleActiveWindow}
-                        isActiveWindow={
-                          activeWindow
-                            ? activeWindow.target === 'FileExplorerDocuments'
-                            : false
-                        }
-                        visible={
-                          windows.FileExplorerDocuments.state !==
-                          windowStates.CLOSED
-                        }
-                        section="Documents"
-                      />
-
-                      <AboutPorfolio
-                        handleWindow={handleWindow}
-                        window={windows.AboutPorfolio}
-                        handleWindowNEW={handleWindowNEW}
-                        windowName="AboutPorfolio"
-                        activeDockIconPosition={activeDockIconPosition}
-                        handleActiveWindow={handleActiveWindow}
-                        isActiveWindow={
-                          activeWindow
-                            ? activeWindow.target === 'AboutPorfolio'
-                            : false
-                        }
-                        visible={
-                          windows.AboutPorfolio.state !== windowStates.CLOSED
-                        }
-                      />
-
-                      <Dock
-                        apps={apps}
-                        onIconClick={handleDockIconClick}
-                        activeWindowName={activeWindow?.name}
-                        activeWindowTarget={activeWindow?.target}
-                      />
-                    </>
-                  )}
-                </div>
-              </>
-            </div>
-            <div className="monitor-base">
-              <img src="/images/display-base.png" />
-            </div>
-          </div>
-          <Lamp onChange={handleLightChange} blink={!isLogged && !lightOn} />
-          <div className="desktop"></div>
-        </div>
-      </>
-    </motion.div>
+        </>
+      </motion.div>
+    </>
   );
 }
 

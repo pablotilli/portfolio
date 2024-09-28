@@ -169,9 +169,6 @@ export default function CvWindow(props: BaseWindowProps) {
         </ActivityBar>
         <SplitPane
           split="vertical"
-          /*  onChange={(newSizes) => {
-          setSizes(newSizes.map((size) => `${size}`));
-        }} */
           minSize={[150, 300]}
           defaultSizes={[100, 500]}
           className="split-pane"
@@ -184,9 +181,6 @@ export default function CvWindow(props: BaseWindowProps) {
 
           <SplitPane
             split="horizontal"
-            /* onChange={(newSizes) => {
-            setSizes2(newSizes.map((size) => `${size}`));
-          }} */
             minSize={[100]}
             defaultSizes={[500, 170]}
             className="split-pane"
